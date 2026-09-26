@@ -4,11 +4,11 @@
 > ① 无「该触发没触发」② 无两个 skill 抢同一任务 ③ 主观顺手。
 > 三条都过 → 推广二期（lang- 语言组）、三期（write-）、四期（ops-）。
 
-## 试点范围（25 个技能）
+## 试点范围（26 个技能）
 
 - **meta-（4）**：meta-skill-router（路由索引）、meta-goal-writer（拆目标给 agent）、meta-knowledge-closeout（收尾对账+沉淀）、meta-writing-skills（写/改 skill 的规范）
-- **dev- 流程链（13）**：dev-brainstorming → dev-writing-plans / dev-spec → dev-tickets → dev-executing-plans（含 dev-tdd、dev-code-conduct 纪律）→ dev-request-review → dev-review-code → dev-receive-feedback → dev-verification → dev-finish-branch
-- **dev- 横切（8）**：dev-debugging、dev-git-conflicts、dev-git-guardrails、dev-git-worktrees、dev-setup-precommit、dev-prototype、dev-codebase-design、dev-domain-modeling、dev-improve-architecture
+- **dev- 流程链（13）**：dev-triage（外来 issue 分诊）→ dev-brainstorming → dev-writing-plans / dev-spec → dev-tickets → dev-executing-plans（含 dev-tdd、dev-code-conduct 纪律）→ dev-request-review → dev-review-code → dev-receive-feedback → dev-verification → dev-finish-branch
+- **dev- 横切（9）**：dev-debugging、dev-git-conflicts、dev-git-guardrails、dev-git-worktrees、dev-setup-precommit、dev-prototype、dev-codebase-design、dev-domain-modeling、dev-improve-architecture
 
 ## 每日怎么记（发现问题就记一行）
 
@@ -27,6 +27,7 @@
 | 你说 | 应命中 |
 |---|---|
 | 「帮我实现这个功能」（无规格时） | dev-brainstorming |
+| 「看看这批 issue 哪些能直接做」 | dev-triage |
 | 「把这些讨论整理成 spec」 | dev-spec |
 | 「把这个计划拆成 tickets」 | dev-tickets |
 | 「评审一下这个分支的改动」 | dev-review-code |
@@ -39,7 +40,7 @@
 
 ## 过渡期事实（安装时已处理，供知悉）
 
-1. 旧拷贝（被替换的 17+ 个）已**备份**在 `%USERPROFILE%\.agents\skills-backup-*`，未硬删
+1. 旧拷贝（被替换的 19 个）已**备份**在 `%USERPROFILE%\.agents\skills-backup-*`，未硬删
 2. superpowers 插件已在 `.dsh\profiles\desktop\.dsh-market\state.json` 的 `disabled` 中停用——旧 15 个 superpowers 技能不再加载，避免与新链抢触发
 3. 未被替换的旧技能（grilling、photo-get、modsearch 等）继续可用，等后续期接管
 
