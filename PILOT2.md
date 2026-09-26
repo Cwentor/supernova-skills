@@ -36,7 +36,7 @@ lang- 与 dev- 的分工边界，重点盯这几对是否抢触发：
 | 边界对 | 分工设计 |
 |---|---|
 | dev-tdd vs lang-java-tdd / lang-python-testing | dev- 管「先写测试」纪律，lang- 管 JUnit5/pytest 具体写法——**两者应该串联而非抢** |
-| dev-verification vs lang-java-verification | dev- 管证据纪律，lang- 管 Java 项目具体命令链 |
+| dev-verification vs lang-java-verification | dev- 管证据纪律，lang- 管 Bean Validation（@Valid / jakarta.validation）入参校验写法 |
 | dev-review-code 安全表 vs lang-java-security | 评审安全扫描 vs Spring Security 配置实践 |
 | lang-ts-api vs lang-ts-backend | REST 设计规范 vs 服务端实现模式 |
 | dev-codebase-design vs lang-ts-deep-modules | 深模块通用判据 vs dependency-cruiser 工具落地 |
