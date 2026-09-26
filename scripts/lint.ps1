@@ -1,4 +1,4 @@
-﻿# lint.ps1 — my-skills 质量门禁：frontmatter / 行数 / 禁用词 / 交叉引用一致性
+# lint.ps1 — my-skills 质量门禁：frontmatter / 行数 / 禁用词 / 交叉引用一致性
 # 用法: powershell -File scripts\lint.ps1
 $ErrorActionPreference = 'Stop'
 $repo = $PSScriptRoot | Split-Path -Parent
@@ -45,7 +45,7 @@ foreach ($d in $dirs) {
         # 交叉引用一致性
         $bodyText = ($lines[($end + 1)..($lines.Count - 1)] -join "`n")
         $refs = @()
-        $m = Select-String -InputObject $bodyText -Pattern '(meta|dev|lang|write|ops)-[a-z][a-z-]*' -AllMatches
+        $m = Select-String -InputObject $bodyText -Pattern '(meta|dev|lang|write|ops)-[a-z][a-z0-9-]*[a-z0-9]' -AllMatches
         if ($m) { foreach ($x in $m.Matches) { $refs += $x.Value } }
         $refs = @($refs | Sort-Object -Unique)
         foreach ($r in $refs) {

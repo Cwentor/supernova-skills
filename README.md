@@ -6,8 +6,8 @@
 
 ```
 meta\   路由 / 治理 / 工具 / 会话
-dev\    开发流程链（idea → ship）      ← 一期（试点）
-lang\   语言专属（二期）
+dev\    开发流程链（idea → ship）      ← 一期（试点，dev 组已验证通过）
+lang\   语言专属                       ← 二期（本期，20 件）
 write\  查写：调研 / 写作 / 内容（三期）
 ops\    运维：部署 / 监控 / 向导（四期）
 scripts\install.ps1 / uninstall.ps1
@@ -45,6 +45,16 @@ powershell -File scripts\install.ps1
 | dev-prototype、dev-codebase-design、dev-improve-architecture | Matt Pocock 工程技能集 / 对应同名 skill |
 | dev-domain-modeling | Matt Pocock 工程技能集 / domain-modeling（+grill-with-docs 的 ADR 理念） |
 | dev-code-conduct | andrej-karpathy-skills / karpathy-guidelines |
+| lang-ts-standards | everything-claude-code-zh / coding-standards（TS/JS/React/Node 标准） |
+| lang-ts-frontend、lang-ts-backend、lang-ts-api、lang-ts-e2e | everything-claude-code-zh / frontend-patterns、backend-patterns、api-design、e2e-testing |
+| lang-ts-shoehorn、lang-ts-deep-modules | Matt Pocock 工程技能集 / migrate-to-shoehorn、setup-ts-deep-modules |
+| lang-java-patterns、lang-java-tdd、lang-java-security、lang-java-verification | everything-claude-code-zh / springboot-patterns、springboot-tdd、springboot-security、springboot-verification* |
+| lang-java-standards、lang-java-jpa | everything-claude-code-zh / java-coding-standards、jpa-patterns |
+| lang-python-patterns、lang-python-testing | everything-claude-code-zh / python-patterns、python-testing |
+| lang-swift-patterns | everything-claude-code-zh / swiftui-patterns |
+| lang-django-patterns、lang-go-patterns、lang-cpp-patterns、lang-clickhouse-patterns | everything-claude-code-zh / django-patterns、golang-patterns、cpp-coding-standards、clickhouse-io |
+
+\* lang-java-verification：源文件实为 CI 构建验证流水线，其精华按 DESIGN.md 分流至四期 ops-deploy；本件按蓝图意图以 jakarta.validation 标准撰写 Bean Validation 数据校验主题。
 
 ## 许可证状态（发布前必查）
 

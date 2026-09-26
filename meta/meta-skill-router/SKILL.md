@@ -13,7 +13,7 @@ description: 不知道该用哪个 skill、想了解个人技能体系结构、�
 |---|---|---|
 | `meta-` | 路由 / 治理 / 工具 / 会话管理 | 部分上线 |
 | `dev-` | 开发流程链（idea → ship） | 已上线 |
-| `lang-` | 语言专属（触发词含语言名，不提语言不触发） | 二期 |
+| `lang-` | 语言专属（触发词含语言名，不提语言不触发） | 已上线（二期 20 件） |
 | `write-` | 查写：调研 / 写作 / 内容 | 三期 |
 | `ops-` | 运维：部署 / 监控 / 向导 | 四期 |
 
@@ -38,6 +38,15 @@ description: 不知道该用哪个 skill、想了解个人技能体系结构、�
 - **一次性加固仓库** → `dev-setup-precommit`（提交时格式化 / 类型检查 / 测试门禁）
 - **设计辅助** → `dev-prototype`（一次性原型回答设计问题）、`dev-codebase-design`（深模块词汇）、`dev-domain-modeling`（领域语言 / ADR）、`dev-improve-architecture`（架构体检）
 
+## 语言专属（lang-，二期已上线 20 件）
+
+不提语言名不触发；与 `dev-` 横切纪律配合（如 `dev-tdd` 管纪律，`lang-java-tdd` 管 JUnit 落地写法）。
+
+- **TypeScript 全套**：`lang-ts-standards`（TS/JS/React/Node 编码标准）→ `lang-ts-frontend`（React 组件与状态模式）→ `lang-ts-backend`（Node 后端结构与横切关注点）→ `lang-ts-api`（REST API 设计：状态码 / 分页 / 契约）→ `lang-ts-e2e`（Playwright 端到端测试）→ `lang-ts-shoehorn`（测试数据 shoehorn 断言迁移）→ `lang-ts-deep-modules`（深模块改造）
+- **Java / Spring**：`lang-java-patterns`（Controller→Service→Repository 全链路）、`lang-java-standards`（语言级规范）、`lang-java-tdd`（JUnit/Mockito 落地）、`lang-java-security`（Spring Security 认证授权）、`lang-java-verification`（Bean Validation）、`lang-java-jpa`（JPA/Hibernate 模式）
+- **Python**：`lang-python-patterns`（惯用法 / PEP 8 / 类型提示）、`lang-python-testing`（pytest 生态）
+- **偶发语言（patterns-only 速查）**：`lang-swift-patterns`（SwiftUI）、`lang-django-patterns`（DRF/ORM）、`lang-go-patterns`、`lang-cpp-patterns`、`lang-clickhouse-patterns`
+
 ## meta 层
 
 - 本 skill：路由与索引（单一来源，不另设 INDEX 文件）
@@ -47,7 +56,6 @@ description: 不知道该用哪个 skill、想了解个人技能体系结构、�
 
 ## 后续期（规划中）
 
-- 二期 `lang-`：ts / java / python 全套（standards / patterns / testing / security / api…）+ swift / django / go / cpp / clickhouse 的 patterns
 - 三期 `write-`：write-research、write-fragments、write-beats、write-shape、write-content-engine、write-market-research
 - 四期 `ops-`：ops-deploy、ops-monitoring、ops-wizard；GitHub 约定层暂缓
 - 未上线的活先用通用能力顶上，不要虚构引用不存在的 skill。
@@ -56,6 +64,6 @@ description: 不知道该用哪个 skill、想了解个人技能体系结构、�
 
 1. 拿不准用哪个 skill → 查本表；表里没有 → 直说没有，不编造。
 2. 任务已明确匹配某 skill 的触发词 → 直接用，不必先查本表。
-3. 过渡期：环境里可能残留同域旧技能（如 `tdd`、`test-driven-development`、`code-review` 等无前缀旧名）——一律以 `dev-` / `meta-` 新技能为准，不要调用旧名。
+3. 过渡期：环境里可能残留同域旧技能（如 `tdd`、`test-driven-development`、`code-review` 等无前缀旧名，以及已被取代的 `migrate-to-shoehorn`、`setup-ts-deep-modules`）——一律以 `dev-` / `meta-` / `lang-` 新技能为准，不要调用旧名。
 4. 本表与实际 skill 内容冲突时，以实际 skill 为准，并提示用户更新本表。
 5. 体系新增 / 删除 skill 后，必须同步更新本表（单一来源原则）。
