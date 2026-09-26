@@ -14,7 +14,7 @@ description: 不知道该用哪个 skill、想了解个人技能体系结构、�
 | `meta-` | 路由 / 治理 / 工具 / 会话管理 | 部分上线 |
 | `dev-` | 开发流程链（idea → ship） | 已上线 |
 | `lang-` | 语言专属（触发词含语言名，不提语言不触发） | 已上线（二期 20 件） |
-| `write-` | 查写：调研 / 写作 / 内容 | 三期 |
+| `write-` | 查写：调研 / 写作 / 内容 | 已上线（三期 6 件） |
 | `ops-` | 运维：部署 / 监控 / 向导 | 四期 |
 
 ## 开发主流程：idea → ship
@@ -47,6 +47,12 @@ description: 不知道该用哪个 skill、想了解个人技能体系结构、�
 - **Python**：`lang-python-patterns`（惯用法 / PEP 8 / 类型提示）、`lang-python-testing`（pytest 生态）
 - **偶发语言（patterns-only 速查）**：`lang-swift-patterns`（SwiftUI）、`lang-django-patterns`（DRF/ORM）、`lang-go-patterns`、`lang-cpp-patterns`、`lang-clickhouse-patterns`
 
+## 查写（write-，三期已上线 6 件）
+
+- **调研纪律**：`write-research`——一手来源调研：逐条溯源、单 Markdown 落盘。
+- **写作流水线**：`write-fragments`（explore：对话攒碎片素材）→ 成文二选一：`write-beats`（节拍旅程，分支选择式推进）或 `write-shape`（逐段论证塑形 + 形式选择 + 语气）。
+- **领域内容**：`write-content-engine`（内容生产体系）、`write-market-research`（市场 / 竞品调研，查证纪律沿用 write-research）。
+
 ## meta 层
 
 - 本 skill：路由与索引（单一来源，不另设 INDEX 文件）
@@ -56,7 +62,6 @@ description: 不知道该用哪个 skill、想了解个人技能体系结构、�
 
 ## 后续期（规划中）
 
-- 三期 `write-`：write-research、write-fragments、write-beats、write-shape、write-content-engine、write-market-research
 - 四期 `ops-`：ops-deploy、ops-monitoring、ops-wizard；GitHub 约定层暂缓
 - 未上线的活先用通用能力顶上，不要虚构引用不存在的 skill。
 
@@ -64,6 +69,6 @@ description: 不知道该用哪个 skill、想了解个人技能体系结构、�
 
 1. 拿不准用哪个 skill → 查本表；表里没有 → 直说没有，不编造。
 2. 任务已明确匹配某 skill 的触发词 → 直接用，不必先查本表。
-3. 过渡期：环境里可能残留同域旧技能（如 `tdd`、`test-driven-development`、`code-review` 等无前缀旧名，以及已被取代的 `migrate-to-shoehorn`、`setup-ts-deep-modules`）——一律以 `dev-` / `meta-` / `lang-` 新技能为准，不要调用旧名。
+3. 过渡期：环境里可能残留同域旧技能（如 `tdd`、`test-driven-development`、`code-review` 等无前缀旧名，以及已被取代的 `migrate-to-shoehorn`、`setup-ts-deep-modules`、`research`、`writing-fragments`、`writing-beats`、`writing-shape`）——一律以 `dev-` / `meta-` / `lang-` / `write-` 新技能为准，不要调用旧名。
 4. 本表与实际 skill 内容冲突时，以实际 skill 为准，并提示用户更新本表。
 5. 体系新增 / 删除 skill 后，必须同步更新本表（单一来源原则）。

@@ -32,6 +32,10 @@ $superseded = @{
     'wayfinder'                    = 'dev-tickets'
     'migrate-to-shoehorn'          = 'lang-ts-shoehorn'
     'setup-ts-deep-modules'         = 'lang-ts-deep-modules'
+    'research'                     = 'write-research'
+    'writing-fragments'            = 'write-fragments'
+    'writing-beats'                = 'write-beats'
+    'writing-shape'                = 'write-shape'
 }
 
 # 收集所有带 SKILL.md 的技能目录（一期 meta/dev，后续期 lang/write/ops 建好即自动纳入）

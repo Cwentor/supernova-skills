@@ -6,9 +6,9 @@
 
 ```
 meta\   路由 / 治理 / 工具 / 会话
-dev\    开发流程链（idea → ship）      ← 一期（试点，dev 组已验证通过）
-lang\   语言专属                       ← 二期（本期，20 件）
-write\  查写：调研 / 写作 / 内容（三期）
+dev\    开发流程链（idea → ship）      ← 一期（dev 组已验证通过）
+lang\   语言专属                       ← 二期（20 件）
+write\  查写：调研 / 写作 / 内容       ← 三期（本期，6 件）
 ops\    运维：部署 / 监控 / 向导（四期）
 scripts\install.ps1 / uninstall.ps1
 ```
@@ -53,6 +53,10 @@ powershell -File scripts\install.ps1
 | lang-python-patterns、lang-python-testing | everything-claude-code-zh / python-patterns、python-testing |
 | lang-swift-patterns | everything-claude-code-zh / swiftui-patterns |
 | lang-django-patterns、lang-go-patterns、lang-cpp-patterns、lang-clickhouse-patterns | everything-claude-code-zh / django-patterns、golang-patterns、cpp-coding-standards、clickhouse-io |
+| write-research | Matt Pocock 工程技能集 / research |
+| write-fragments、write-beats、write-shape | Matt Pocock 工程技能集 / writing-fragments、writing-beats、writing-shape（shape 并入 article-writing 语气精华） |
+| write-content-engine | everything-claude-code-zh / content-engine |
+| write-market-research | everything-claude-code-zh / market-research |
 
 \* lang-java-verification：源文件实为 CI 构建验证流水线，其精华按 DESIGN.md 分流至四期 ops-deploy；本件按蓝图意图以 jakarta.validation 标准撰写 Bean Validation 数据校验主题。
 
