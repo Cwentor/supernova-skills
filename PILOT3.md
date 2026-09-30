@@ -5,6 +5,8 @@
 > ② 无两个 skill 抢同一任务（三期重点：写作流水线三件套的边界）
 > ③ 主观顺手。
 
+> **⚠️ 审计修正（2026-09-26）**：`write-shape` 曾因同一 frontmatter YAML 陷阱（description 含未加引号的 `: `）被加载器静默丢弃，已修复并确认上线（详见 `PILOT-LOG.md` 审计记录）。涉及 shape 的冒烟项与边界对（beats vs shape、shape vs content-engine）请以修复后状态为准。
+
 ## 三期范围（6 个技能）
 
 - **write-research**：一手来源调研纪律（逐条溯源、单 Markdown 落盘）

@@ -5,6 +5,8 @@
 > ② 无两个 skill 抢同一任务（二期重点观察 lang-* 与 dev-* 的边界）
 > ③ 主观顺手。
 
+> **⚠️ 审计修正（2026-09-26）**：`lang-java-standards`、`lang-java-jpa`、`lang-ts-backend`、`lang-ts-deep-modules` 四件曾因 frontmatter YAML 陷阱（description 含未加引号的 `: `）被加载器静默丢弃——即二期验证期间它们**不可能被触发**。已修复并确认上线（详见 `PILOT-LOG.md` 审计记录）。**请对涉及这四件的冒烟项重跑一次**，其余 16 件不受影响。
+
 ## 二期范围（20 个技能）
 
 - **TS 全套（7）**：lang-ts-standards、lang-ts-frontend、lang-ts-backend、lang-ts-api、lang-ts-e2e、lang-ts-shoehorn、lang-ts-deep-modules
