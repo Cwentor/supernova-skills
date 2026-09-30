@@ -1,6 +1,6 @@
 ---
 name: lang-ts-backend
-description: 当 TypeScript / Node.js 服务端需要搭工程结构或处理横切关注点时使用：「路由→服务→数据访问」分层、统一错误类型与集中错误处理、认证/权限中间件、启动期校验环境变量配置、数据库集成（防 N+1、事务、缓存）、结构化日志与限流。症状：路由 handler 里直接写 SQL、业务逻辑与数据访问混作一团、各处 new Error 没有状态码、裸读 process.env、密钥硬编码、错误响应泄露内部细节。Use when structuring a TypeScript/Node.js backend: layering routes/services/repositories, unified error types with central error handling, auth middleware, env config validation, DB integration, or structured logging.
+description: "当 TypeScript / Node.js 服务端需要搭工程结构或处理横切关注点时使用：「路由→服务→数据访问」分层、统一错误类型与集中错误处理、认证/权限中间件、启动期校验环境变量配置、数据库集成（防 N+1、事务、缓存）、结构化日志与限流。症状：路由 handler 里直接写 SQL、业务逻辑与数据访问混作一团、各处 new Error 没有状态码、裸读 process.env、密钥硬编码、错误响应泄露内部细节。Use when structuring a TypeScript/Node.js backend: layering routes/services/repositories, unified error types with central error handling, auth middleware, env config validation, DB integration, or structured logging."
 ---
 
 # TypeScript / Node.js 后端工程模式

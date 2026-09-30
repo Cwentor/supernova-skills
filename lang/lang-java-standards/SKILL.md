@@ -1,6 +1,6 @@
 ---
 name: lang-java-standards
-description: 当编写或评审 Java 代码、需要判断语言级规范问题时使用——症状：命名不统一、字段满屏 setter、Optional 被用作字段/参数或裸调 get()、catch 吞异常或泛捕 Exception、只覆写 equals 不覆写 hashCode、共享可变状态无保护、拿不准用 record 还是普通类。Use when writing or reviewing Java code for language-level standards: naming, immutability, Optional, exceptions, equals/hashCode, concurrency, and records.
+description: "当编写或评审 Java 代码、需要判断语言级规范问题时使用——症状：命名不统一、字段满屏 setter、Optional 被用作字段/参数或裸调 get()、catch 吞异常或泛捕 Exception、只覆写 equals 不覆写 hashCode、共享可变状态无保护、拿不准用 record 还是普通类。Use when writing or reviewing Java code for language-level standards: naming, immutability, Optional, exceptions, equals/hashCode, concurrency, and records."
 ---
 
 # Java 语言级编码规范

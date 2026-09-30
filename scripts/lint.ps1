@@ -30,6 +30,13 @@ foreach ($d in $dirs) {
         $descLine = @($fm | Where-Object { $_ -like 'description:*' }) | Select-Object -First 1
         if (-not $descLine) { $issues += 'FAIL: 缺 description 字段' }
         elseif ((($fm -join ' ') -replace '.*description:\s*', '') -notmatch 'Use when') { $issues += 'WARN: description 缺英文触发句 Use when...' }
+        if ($descLine) {
+            $descVal = ($descLine -replace '^description:\s*', '').Trim()
+            $quoted = ($descVal.Length -ge 2) -and ((($descVal.StartsWith('"')) -and ($descVal.EndsWith('"'))) -or (($descVal.StartsWith("'")) -and ($descVal.EndsWith("'"))))
+            if ((-not $quoted) -and ($descVal -match ': ')) {
+                $issues += 'FAIL: description 未加引号却含 ASCII 冒号+空格（YAML 纯量标量陷阱，加载器会静默丢弃本技能）——用双引号包裹整个 description'
+            }
+        }
         $extra = @($fm | Where-Object { $_ -match '^[A-Za-z-]+:\s' -and $_ -notmatch '^(name|description):' })
         if ($extra.Count -gt 0) { $issues += ('WARN: frontmatter 多余字段: ' + ($extra -join ' | ')) }
     }

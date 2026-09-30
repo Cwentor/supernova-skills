@@ -45,6 +45,8 @@ powershell -File scripts\install.ps1
 | dev-prototype、dev-codebase-design、dev-improve-architecture | Matt Pocock 工程技能集 / 对应同名 skill |
 | dev-domain-modeling | Matt Pocock 工程技能集 / domain-modeling（+grill-with-docs 的 ADR 理念） |
 | dev-code-conduct | andrej-karpathy-skills / karpathy-guidelines |
+| dev-git-worktrees | Matt Pocock 工程技能集 / using-git-worktrees |
+| meta-writing-skills | Matt Pocock 工程技能集 / writing-skills（中文化适配） |
 | lang-ts-standards | everything-claude-code-zh / coding-standards（TS/JS/React/Node 标准） |
 | lang-ts-frontend、lang-ts-backend、lang-ts-api、lang-ts-e2e | everything-claude-code-zh / frontend-patterns、backend-patterns、api-design、e2e-testing |
 | lang-ts-shoehorn、lang-ts-deep-modules | Matt Pocock 工程技能集 / migrate-to-shoehorn、setup-ts-deep-modules |

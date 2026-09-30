@@ -36,6 +36,7 @@ description: 不知道该用哪个 skill、想了解个人技能体系结构、�
 - **合并冲突** → `dev-git-conflicts`（按意图解决，永不 --abort）
 - **危险 git 操作** → `dev-git-guardrails`（改写历史 / 删除类命令执行前自检）
 - **一次性加固仓库** → `dev-setup-precommit`（提交时格式化 / 类型检查 / 测试门禁）
+- **隔离工作区** → `dev-git-worktrees`（检出第二份工作副本，不弄脏当前分支与未提交改动）
 - **设计辅助** → `dev-prototype`（一次性原型回答设计问题）、`dev-codebase-design`（深模块词汇）、`dev-domain-modeling`（领域语言 / ADR）、`dev-improve-architecture`（架构体检）
 
 ## 语言专属（lang-，二期已上线 20 件）
@@ -58,6 +59,7 @@ description: 不知道该用哪个 skill、想了解个人技能体系结构、�
 - 本 skill：路由与索引（单一来源，不另设 INDEX 文件）
 - **拆目标给 agent** → `meta-goal-writer`（一句话想法 → agent 可独立跑完的任务书）
 - **会话收尾** → `meta-knowledge-closeout`（知识对账 + 模式沉淀，一切落盘须人确认）
+- **治理工具** → `meta-writing-skills`（writing-skills 检查清单中文化适配：新建 / 修改 / 验证技能）
 - 后期上线（现在不存在，禁止引用）：meta-questionnaire、meta-handoff、meta-security-audit、meta-find-skills、meta-writing-for-agents、meta-grill-me、meta-grilling、meta-photo-get、meta-modsearch
 
 ## 后续期（规划中）

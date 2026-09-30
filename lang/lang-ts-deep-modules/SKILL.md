@@ -1,6 +1,6 @@
 ---
 name: lang-ts-deep-modules
-description: 在 TypeScript 仓库配置深模块（deep modules）边界时使用：用 dependency-cruiser 强制包外只能从包的入口文件导入、实现藏在子文件夹；触发症状：包之间深层导入混乱、想设模块边界、提到 deep modules、depcruise、lint:boundaries、或想禁 barrel 文件。Use when wiring dependency-cruiser into a TypeScript repo to enforce deep-module boundaries: entry points at package root, implementation hidden in subfolders.
+description: "在 TypeScript 仓库配置深模块（deep modules）边界时使用：用 dependency-cruiser 强制包外只能从包的入口文件导入、实现藏在子文件夹；触发症状：包之间深层导入混乱、想设模块边界、提到 deep modules、depcruise、lint:boundaries、或想禁 barrel 文件。Use when wiring dependency-cruiser into a TypeScript repo to enforce deep-module boundaries: entry points at package root, implementation hidden in subfolders."
 ---
 
 # lang-ts-deep-modules

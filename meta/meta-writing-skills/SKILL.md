@@ -27,6 +27,7 @@ description: 当要新建或修改 SKILL.md、写或调整 frontmatter 的 name 
 
 - 一个 skill 一个目录，目录里只放一个 SKILL.md，不建其他文件。
 - frontmatter 只含 `name`（等于目录名，仅字母数字与连字符）与 `description` 两个字段；description 尽量 ≤500 字符。
+- **description 值里出现英文冒号+空格（`: `）时必须整体用双引号包裹**：`description: "…Use when X: Y…"`。未加引号的纯量标量含 `: ` 会让严格 YAML 解析器报错，加载器**静默丢弃整个技能**——症状极具迷惑性：文件在、junction 通、lint 绿，就是这个技能永远不触发。已上线技能也适用：改完 description 要重新确认它仍出现在可用技能目录里。
 - 正文用中文；代码、命令、字段名、报错信息保留英文。
 - 正文 ≤200 行软上限；超了先想「是不是藏了两个意图」。
 - 正文骨架（按需取用，不硬凑）：
