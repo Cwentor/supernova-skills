@@ -4,7 +4,7 @@ $ErrorActionPreference = 'Stop'
 $repo = $PSScriptRoot | Split-Path -Parent
 
 # 未上线技能（一期之后的期），一期技能正文中出现即 FAIL；meta-skill-router 的「后续期」章节豁免
-$future = @('meta-questionnaire','meta-handoff','meta-security-audit','meta-find-skills','meta-writing-for-agents','meta-grill-me','meta-grilling','meta-photo-get','meta-modsearch','ops-deploy','ops-monitoring','ops-wizard','ops-github-conventions')
+$future = @('meta-questionnaire','meta-handoff','meta-security-audit','meta-find-skills','meta-writing-for-agents','meta-grill-me','meta-grilling','meta-photo-get','meta-modsearch','ops-github-conventions')
 
 $dirs = foreach ($c in @('meta','dev','lang','write','ops')) {
     Get-ChildItem (Join-Path $repo $c) -Directory -ErrorAction SilentlyContinue |

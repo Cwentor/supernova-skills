@@ -15,7 +15,7 @@ description: 不知道该用哪个 skill、想了解个人技能体系结构、�
 | `dev-` | 开发流程链（idea → ship） | 已上线 |
 | `lang-` | 语言专属（触发词含语言名，不提语言不触发） | 已上线（二期 20 件） |
 | `write-` | 查写：调研 / 写作 / 内容 | 已上线（三期 6 件） |
-| `ops-` | 运维：部署 / 监控 / 向导 | 四期 |
+| `ops-` | 运维：部署 / 监控 / 向导 | 已上线（四期 3 件） |
 
 ## 开发主流程：idea → ship
 
@@ -54,6 +54,12 @@ description: 不知道该用哪个 skill、想了解个人技能体系结构、�
 - **写作流水线**：`write-fragments`（explore：对话攒碎片素材）→ 成文二选一：`write-beats`（节拍旅程，分支选择式推进）或 `write-shape`（逐段论证塑形 + 形式选择 + 语气）。
 - **领域内容**：`write-content-engine`（内容生产体系）、`write-market-research`（市场 / 竞品调研，查证纪律沿用 write-research）。
 
+## 运维（ops-，四期已上线 3 件）
+
+- **部署与上线** → `ops-deploy`：部署策略（滚动 / 蓝绿 / 金丝雀）、容器与镜像、数据库迁移的发布顺序、部署前验证闭环、回滚预案。宣称「发布成功」的证据纪律仍归 `dev-verification`。
+- **可观测性** → `ops-monitoring`：日志 / 指标 / 健康检查 / 告警 / SLO。与 `dev-debugging` 分工：本件管「上线后有没有证据可查」，dev- 管「拿到证据怎么定位根因」。
+- **人类步骤交接** → `ops-wizard`：生成交互式向导，把只有人类才能做的步骤（开通资源、配置凭据、第三方控制台、一次性切换）交到人手里。agent 自己就能做的步骤**不**塞进向导。
+
 ## meta 层
 
 - 本 skill：路由与索引（单一来源，不另设 INDEX 文件）
@@ -64,13 +70,14 @@ description: 不知道该用哪个 skill、想了解个人技能体系结构、�
 
 ## 后续期（规划中）
 
-- 四期 `ops-`：ops-deploy、ops-monitoring、ops-wizard；GitHub 约定层暂缓
+- 体系已按蓝图落地到终态 **55 件**（一期 26 + 二期 20 + 三期 6 + 四期 3）；四期 `ops-` 已上线。
+- 未立项：上列 meta- 后续 9 件；GitHub 约定层 `ops-github-conventions` 属暂缓区（同类需求出现 ≥3 次再按准入规则立项）。
 - 未上线的活先用通用能力顶上，不要虚构引用不存在的 skill。
 
 ## 使用规则
 
 1. 拿不准用哪个 skill → 查本表；表里没有 → 直说没有，不编造。
 2. 任务已明确匹配某 skill 的触发词 → 直接用，不必先查本表。
-3. 过渡期：环境里可能残留同域旧技能（如 `tdd`、`test-driven-development`、`code-review` 等无前缀旧名，以及已被取代的 `migrate-to-shoehorn`、`setup-ts-deep-modules`、`research`、`writing-fragments`、`writing-beats`、`writing-shape`）——一律以 `dev-` / `meta-` / `lang-` / `write-` 新技能为准，不要调用旧名。
+3. 过渡期：环境里可能残留同域旧技能（如 `tdd`、`test-driven-development`、`code-review` 等无前缀旧名，以及已被取代的 `migrate-to-shoehorn`、`setup-ts-deep-modules`、`research`、`writing-fragments`、`writing-beats`、`writing-shape`、`wizard`）——一律以 `dev-` / `meta-` / `lang-` / `write-` / `ops-` 新技能为准，不要调用旧名。
 4. 本表与实际 skill 内容冲突时，以实际 skill 为准，并提示用户更新本表。
 5. 体系新增 / 删除 skill 后，必须同步更新本表（单一来源原则）。

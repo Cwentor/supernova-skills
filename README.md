@@ -8,8 +8,8 @@
 meta\   路由 / 治理 / 工具 / 会话
 dev\    开发流程链（idea → ship）      ← 一期（dev 组已验证通过）
 lang\   语言专属                       ← 二期（20 件）
-write\  查写：调研 / 写作 / 内容       ← 三期（本期，6 件）
-ops\    运维：部署 / 监控 / 向导（四期）
+write\  查写：调研 / 写作 / 内容       ← 三期（6 件）
+ops\    运维：部署 / 监控 / 向导       ← 四期（本期，3 件；体系达终态 55 件）
 scripts\install.ps1 / uninstall.ps1
 ```
 
@@ -59,8 +59,11 @@ powershell -File scripts\install.ps1
 | write-fragments、write-beats、write-shape | Matt Pocock 工程技能集 / writing-fragments、writing-beats、writing-shape（shape 并入 article-writing 语气精华） |
 | write-content-engine | everything-claude-code-zh / content-engine |
 | write-market-research | everything-claude-code-zh / market-research |
+| ops-deploy | everything-claude-code-zh / deployment-patterns、docker-patterns、database-migrations（三合一）+ verification-loop、springboot-verification（部署前验证闭环精华） |
+| ops-monitoring | 新建（蓝图标注「素材缺口」，无源文件；按通用工程实践撰写） |
+| ops-wizard | Matt Pocock 工程技能集 / wizard |
 
-\* lang-java-verification：源文件实为 CI 构建验证流水线，其精华按 DESIGN.md 分流至四期 ops-deploy；本件按蓝图意图以 jakarta.validation 标准撰写 Bean Validation 数据校验主题。
+\* lang-java-verification：源文件实为 CI 构建验证流水线，其精华按 DESIGN.md 已并入四期 `ops-deploy`（部署前验证闭环）；本件按蓝图意图以 jakarta.validation 标准撰写 Bean Validation 数据校验主题。
 
 ## 许可证状态（发布前必查）
 

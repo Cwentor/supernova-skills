@@ -9,7 +9,7 @@ $backup = Join-Path $env:USERPROFILE ('.agents\skills-backup-' + (Get-Date -Form
 
 if (-not (Test-Path $target)) { New-Item -ItemType Directory -Force -Path $target | Out-Null }
 
-# 一期被替代的旧技能（旧名 -> 新名）。安装时移入备份，避免同一意图新旧双触发。
+# 被替代的旧技能（旧名 -> 新名，覆盖一至四期）。安装时移入备份，避免同一意图新旧双触发。
 $superseded = @{
     'ask-matt'                     = 'meta-skill-router'
     'code-review'                  = 'dev-review-code'
@@ -36,6 +36,7 @@ $superseded = @{
     'writing-fragments'            = 'write-fragments'
     'writing-beats'                = 'write-beats'
     'writing-shape'                = 'write-shape'
+    'wizard'                       = 'ops-wizard'
 }
 
 # 收集所有带 SKILL.md 的技能目录（一期 meta/dev，后续期 lang/write/ops 建好即自动纳入）
