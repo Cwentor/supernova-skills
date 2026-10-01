@@ -1,4 +1,4 @@
-# install.ps1 — 把 my-skills 各技能 junction 到 .agents\skills
+﻿# install.ps1 — 把 my-skills 各技能 junction 到 .agents\skills
 # 用法: powershell -File install.ps1 [-DryRun]
 param([switch]$DryRun)
 

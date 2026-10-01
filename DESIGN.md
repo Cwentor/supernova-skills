@@ -11,7 +11,7 @@
 ## 体系结构
 
 五类前缀：`meta-`（路由/治理/工具）、`dev-`（开发流程链）、`lang-`（语言专属，触发词含语言名）、`write-`（查写）、`ops-`（运维）。
-终态规模 ~55 个小而专的 skill；一期上线 26 个（4 meta + 22 dev，含两件落地期补充项，见文末「一期补充项」）。
+终态规模 ~55 个小而专的 skill（四期达成 55，后期按准入补建 2 件 → 57）；一期上线 26 个（4 meta + 22 dev，含两件落地期补充项，见文末「一期补充项」）。
 
 ## 一期清单（试点：开发领域）
 
@@ -31,6 +31,14 @@ write-research、write-fragments、write-beats、write-shape（并 article-writi
 ## 四期（ops-）
 
 ops-deploy（deployment-patterns + docker-patterns + database-migrations 三合一 + verification-loop 精华）、ops-monitoring（新建，素材缺口）、ops-wizard。
+
+## 五期（后期补建，2026-10-01 用户裁决）
+
+全源清点（6 个源仓库共 117 个源技能）发现 8 个源技能未在任何文档交代。裁决结果：
+
+- **补建 2 件**：`meta-security-audit`（← ECC security-review，496 行跨语言安全清单，去 Supabase/Solana/Next.js 专属化，覆盖 lang-java-security 管不到的跨语言安全意图）、`lang-postgres-patterns`（← ECC postgres-patterns，补 OLTP 关系库空白，与 lang-clickhouse-patterns 形成数据层两翼）
+- **否决 4 件**（违反公理 2 自包含，harness/插件专属）：`strategic-compact`（上下文压缩机制，专属词 23 处）、`security-scan`（扫 .claude/ 配置与 hooks，22 处）、`diagnosing-superpowers`（专治该插件故障，11 处）、`using-superpowers`（已被 meta-skill-router 取代）
+- **判定已覆盖 2 件**：`retro`（会话复盘改进 agent 环境 → meta-knowledge-closeout 的模式沉淀已覆盖）、`to-questionnaire`（→ router 中未立项的 meta-questionnaire 候选源）
 
 ## 删除清单（已裁决）
 
@@ -54,7 +62,7 @@ ops-deploy（deployment-patterns + docker-patterns + database-migrations 三合�
 - 已知加载来源：① `C:\Users\<user>\.agents\skills`（用户级，junction 安装目标）② superpowers-dsh 插件（15 个旧技能；**一期安装时在 `.dsh\profiles\desktop\.dsh-market\state.json` 的 `disabled` 数组加入 `superpowers-dsh` 停用**，防止与 dev-* 双重加载，可随时移除恢复）③ DSH 市场插件 dsh-github-skills（gh-* GitHub 操作技能）与 @liustack/modsearch（搜索）——不整合、不覆盖，未来迁移到其他 agent 时按暂缓区规则补建 GitHub 操作层
 - 来源致谢：skill 文件内部零标注（保持干净）；README 集中一张来源清单；发布前统一许可检查
 - 准入：同一真实需求出现 ≥3 次且现有覆盖不了 → 立项；沉淀来源 = meta-knowledge-closeout
-- 试点通过标准（**用户执行**）：一期安装后跑真实开发任务，看三点——无「该触发没触发」、无两个 skill 抢同一任务、主观顺手 → **2026-10-01 用户确认三点全部通过（覆盖一至四期 55 件）**，四期体系验证完毕，进入维护态
+- 试点通过标准（**用户执行**）：一期安装后跑真实开发任务，看三点——无「该触发没触发」、无两个 skill 抢同一任务、主观顺手 → **2026-10-01 用户确认三点全部通过（覆盖一至四期 55 件）**，四期体系验证完毕，进入维护态；同日全源清点后按裁决补建 `meta-security-audit` 与 `lang-postgres-patterns`（→ 57 件）
 
 ## 已裁小项（用户已确认）
 

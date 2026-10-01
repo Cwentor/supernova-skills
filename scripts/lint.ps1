@@ -1,10 +1,10 @@
-# lint.ps1 — my-skills 质量门禁：frontmatter / 行数 / 禁用词 / 交叉引用一致性
+﻿# lint.ps1 — my-skills 质量门禁：frontmatter / 行数 / 禁用词 / 交叉引用一致性
 # 用法: powershell -File scripts\lint.ps1
 $ErrorActionPreference = 'Stop'
 $repo = $PSScriptRoot | Split-Path -Parent
 
 # 未上线技能（一期之后的期），一期技能正文中出现即 FAIL；meta-skill-router 的「后续期」章节豁免
-$future = @('meta-questionnaire','meta-handoff','meta-security-audit','meta-find-skills','meta-writing-for-agents','meta-grill-me','meta-grilling','meta-photo-get','meta-modsearch','ops-github-conventions')
+$future = @('meta-questionnaire','meta-handoff','meta-find-skills','meta-writing-for-agents','meta-grill-me','meta-grilling','meta-photo-get','meta-modsearch','ops-github-conventions')
 
 $dirs = foreach ($c in @('meta','dev','lang','write','ops')) {
     Get-ChildItem (Join-Path $repo $c) -Directory -ErrorAction SilentlyContinue |
@@ -15,7 +15,8 @@ $pass = 0; $warned = 0; $failed = 0
 
 foreach ($d in $dirs) {
     $f = Join-Path $d.FullName 'SKILL.md'
-    $lines = @(Get-Content $f)
+    # 必须显式指定 UTF8：Windows PowerShell 5.1 默认按 ANSI 读，中文会变多字节导致字符数虚高（假 FAIL）
+    $lines = @(Get-Content -LiteralPath $f -Encoding UTF8)
     $issues = @()
     $end = -1
     for ($i = 1; $i -lt $lines.Count; $i++) { if ($lines[$i] -eq '---') { $end = $i; break } }

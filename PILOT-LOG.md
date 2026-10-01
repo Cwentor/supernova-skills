@@ -37,6 +37,15 @@
 
 ## 问题记录（发现就记一行）
 
+### [ops][scripts] 文档上写的 lint/install 命令此前跑不通 —— 脚本缺 UTF-8 BOM（2026-10-01 发现并修复）
+
+- **症状**：README 与 AGENTS.md 都写 `powershell -File scripts\lint.ps1`，实际执行直接 ParserError（`Unexpected token 'WARN:'`），**从未成功运行过**。此前一直用 `pwsh` 手跑，掩盖了问题。
+- **根因（两层）**：
+  1. `install.ps1` / `lint.ps1` 无 UTF-8 BOM。Windows PowerShell 5.1 对无 BOM 的 `.ps1` 按 ANSI(GBK) 解码，中文注释乱码 → 解析失败。`uninstall.ps1` 恰好有 BOM，所以没人察觉。
+  2. 补 BOM 后暴露第二层：`lint.ps1` 用 `Get-Content` 未指定编码，5.1 下按 ANSI 读 UTF-8 的 `SKILL.md` → 中文变多字节 → 长度校验**假 FAIL**（把 478 字符的 `lang-ts-frontend` 报成 537，57 件里误报 5 件 FAIL / 52 件 WARN）。
+- **修复**：两脚本补 BOM；`Get-Content` 显式 `-Encoding UTF8`。现在 `powershell` 5.1 与 `pwsh` **结果完全一致**（57 PASS / 0 WARN / 0 FAIL）。
+- **隐蔽点**：用编辑工具改 `.ps1` 会**丢掉 BOM**——已写入 AGENTS.md 作为红线，改完脚本必须两边解释器各跑一次对比。
+
 ### [lang][write] 5 件技能被加载器静默丢弃 —— description 未加引号却含 `: `（2026-09-26 发现并修复）
 
 - **症状**：`lang-java-standards`、`lang-java-jpa`、`lang-ts-backend`、`lang-ts-deep-modules`、`write-shape` 在可用技能目录中反复缺席；但文件在盘、junction 正常、lint 全绿——即「永远不触发」，最难发现的一类故障。

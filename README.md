@@ -5,9 +5,9 @@
 ## 结构
 
 ```
-meta\   路由 / 治理 / 工具 / 会话
+meta\   路由 / 治理 / 工具 / 会话 / 安全
 dev\    开发流程链（idea → ship）      ← 一期（dev 组已验证通过）
-lang\   语言专属                       ← 二期（20 件）
+lang\   语言专属                       ← 二期（20 件）+ lang-postgres-patterns
 write\  查写：调研 / 写作 / 内容       ← 三期（6 件）
 ops\    运维：部署 / 监控 / 向导       ← 四期（3 件；体系达终态 55 件，2026-10-01 试点通过）
 scripts\install.ps1 / uninstall.ps1
@@ -62,6 +62,8 @@ powershell -File scripts\install.ps1
 | ops-deploy | everything-claude-code-zh / deployment-patterns、docker-patterns、database-migrations（三合一）+ verification-loop、springboot-verification（部署前验证闭环精华） |
 | ops-monitoring | 新建（蓝图标注「素材缺口」，无源文件；按通用工程实践撰写） |
 | ops-wizard | Matt Pocock 工程技能集 / wizard |
+| meta-security-audit | everything-claude-code-zh / security-review（496 行跨语言安全清单，去 Supabase/Solana/Next.js 专属化后按四条原则重写） |
+| lang-postgres-patterns | everything-claude-code-zh / postgres-patterns（148 行，补 OLTP 关系库空白；合并 ECC 的 database-reviewer 理念） |
 
 \* lang-java-verification：源文件实为 CI 构建验证流水线，其精华按 DESIGN.md 已并入四期 `ops-deploy`（部署前验证闭环）；本件按蓝图意图以 jakarta.validation 标准撰写 Bean Validation 数据校验主题。
 

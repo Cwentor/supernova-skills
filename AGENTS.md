@@ -5,13 +5,19 @@
 ## 怎么跑
 
 ```powershell
-powershell -File scripts\lint.ps1        # 质量门禁，改完任何 SKILL.md 必须跑
+powershell -File scripts\lint.ps1              # 质量门禁，改完任何 SKILL.md 必须跑
 powershell -File scripts\install.ps1 -DryRun   # 预览安装动作
-powershell -File scripts\install.ps1     # junction 到 %USERPROFILE%\.agents\skills
-powershell -File scripts\uninstall.ps1   # 只摘 junction，备份保留
+powershell -File scripts\install.ps1           # junction 到 %USERPROFILE%\.agents\skills
+powershell -File scripts\uninstall.ps1         # 只摘 junction，备份保留
 ```
 
-安装后需**新开会话**才生效。脚本需 UTF-8 BOM（含中文输出）。
+安装后需**新开会话**才生效。两解释器（`powershell` 5.1 与 `pwsh`）结果必须一致——改完脚本两边都跑一次对比。
+
+**三条编码红线**（踩过一次，症状极隐蔽）：
+
+1. `scripts\*.ps1` **必须带 UTF-8 BOM**。Windows PowerShell 5.1 对无 BOM 的 `.ps1` 按 ANSI(GBK) 解析，中文注释乱码 → 整脚本 ParserError。注意：用编辑工具改脚本会**丢掉 BOM**，改完必须补回。
+2. 脚本里读文件**必须显式 `-Encoding UTF8`**（`Get-Content -Encoding UTF8`）。5.1 默认按 ANSI 读，中文变多字节 → 字符数/长度类校验**假 FAIL**（曾把 478 字符的 description 报成 537）。
+3. `SKILL.md` 用无 BOM UTF-8（YAML 加载器按 UTF-8 读，中文字符数即字符数）。
 
 ## 技术栈与约定
 

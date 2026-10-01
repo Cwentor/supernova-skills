@@ -39,14 +39,15 @@ description: 不知道该用哪个 skill、想了解个人技能体系结构、�
 - **隔离工作区** → `dev-git-worktrees`（检出第二份工作副本，不弄脏当前分支与未提交改动）
 - **设计辅助** → `dev-prototype`（一次性原型回答设计问题）、`dev-codebase-design`（深模块词汇）、`dev-domain-modeling`（领域语言 / ADR）、`dev-improve-architecture`（架构体检）
 
-## 语言专属（lang-，二期已上线 20 件）
+## 语言专属（lang-，二期已上线 20 件 + 后期补 1 件 = 21 件）
 
 不提语言名不触发；与 `dev-` 横切纪律配合（如 `dev-tdd` 管纪律，`lang-java-tdd` 管 JUnit 落地写法）。
 
 - **TypeScript 全套**：`lang-ts-standards`（TS/JS/React/Node 编码标准）→ `lang-ts-frontend`（React 组件与状态模式）→ `lang-ts-backend`（Node 后端结构与横切关注点）→ `lang-ts-api`（REST API 设计：状态码 / 分页 / 契约）→ `lang-ts-e2e`（Playwright 端到端测试）→ `lang-ts-shoehorn`（测试数据 shoehorn 断言迁移）→ `lang-ts-deep-modules`（深模块改造）
 - **Java / Spring**：`lang-java-patterns`（Controller→Service→Repository 全链路）、`lang-java-standards`（语言级规范）、`lang-java-tdd`（JUnit/Mockito 落地）、`lang-java-security`（Spring Security 认证授权）、`lang-java-verification`（Bean Validation）、`lang-java-jpa`（JPA/Hibernate 模式）
 - **Python**：`lang-python-patterns`（惯用法 / PEP 8 / 类型提示）、`lang-python-testing`（pytest 生态）
-- **偶发语言（patterns-only 速查）**：`lang-swift-patterns`（SwiftUI）、`lang-django-patterns`（DRF/ORM）、`lang-go-patterns`、`lang-cpp-patterns`、`lang-clickhouse-patterns`
+- **数据层**：`lang-postgres-patterns`（PostgreSQL 索引选型 / 数据类型 / 查询形态 / 连接超时 / 运维查询）、`lang-clickhouse-patterns`（ClickHouse 列存分析）
+- **偶发语言（patterns-only 速查）**：`lang-swift-patterns`（SwiftUI）、`lang-django-patterns`（DRF/ORM）、`lang-go-patterns`、`lang-cpp-patterns`
 
 ## 查写（write-，三期已上线 6 件）
 
@@ -64,15 +65,16 @@ description: 不知道该用哪个 skill、想了解个人技能体系结构、�
 
 - 本 skill：路由与索引（单一来源，不另设 INDEX 文件）
 - **拆目标给 agent** → `meta-goal-writer`（一句话想法 → agent 可独立跑完的任务书）
+- **安全审查** → `meta-security-audit`（跨语言安全底座：认证授权 / 输入验证 / 注入 / 机密 / 输出编码 / 限速 / 泄露 / 依赖；框架级配置走对应 lang-*-security）
 - **会话收尾** → `meta-knowledge-closeout`（知识对账 + 模式沉淀，一切落盘须人确认）
 - **治理工具** → `meta-writing-skills`（writing-skills 检查清单中文化适配：新建 / 修改 / 验证技能）
-- 后期上线（现在不存在，禁止引用）：meta-questionnaire、meta-handoff、meta-security-audit、meta-find-skills、meta-writing-for-agents、meta-grill-me、meta-grilling、meta-photo-get、meta-modsearch
+- 后期上线（现在不存在，禁止引用）：meta-questionnaire、meta-handoff、meta-find-skills、meta-writing-for-agents、meta-grill-me、meta-grilling、meta-photo-get、meta-modsearch
 
 ## 后续期（无排期，转维护态）
 
-- 体系已按蓝图落地到终态 **55 件**（一期 26 + 二期 20 + 三期 6 + 四期 3），2026-10-01 试点三点全部通过，**进入维护态**。
+- 体系已按蓝图落地到终态 **57 件**（一期 26 + 二期 20 + 三期 6 + 四期 3 + 后期补 2），2026-10-01 试点三点全部通过后进入**维护态**。
 - 增量演进一律走准入规则：同一真实需求出现 ≥3 次且现有覆盖不了，才立项（见 `DESIGN.md`）。
-- 候选方向（**均无排期，禁止引用**）：`ops-github-conventions`（暂缓区）。下列 meta- 方向中，仅 `handoff` / `grilling` / `photo-get` / `modsearch` 有蓝图出处（DESIGN L38、L3、L61），其余（questionnaire、security-audit、find-skills、writing-for-agents、grill-me）**未在蓝图中出现**，属待裁决的悬空候选：meta-questionnaire、meta-handoff、meta-security-audit、meta-find-skills、meta-writing-for-agents、meta-grill-me、meta-grilling、meta-photo-get、meta-modsearch
+- 候选方向（**均无排期，禁止引用**）：`ops-github-conventions`（暂缓区）。下列 meta- 方向中，仅 `handoff` / `grilling` / `photo-get` / `modsearch` 有蓝图出处（DESIGN L38、L3、L61），其余（questionnaire、find-skills、writing-for-agents、grill-me）**未在蓝图中出现**，属待裁决的悬空候选：meta-questionnaire、meta-handoff、meta-find-skills、meta-writing-for-agents、meta-grill-me、meta-grilling、meta-photo-get、meta-modsearch
 - 未上线的活先用通用能力顶上，不要虚构引用不存在的 skill。
 
 ## 使用规则
