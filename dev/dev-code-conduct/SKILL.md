@@ -1,6 +1,6 @@
 ---
 name: dev-code-conduct
-description: "写代码、改代码、重构或评审任何代码时的行为准则底座；当发现自己在隐藏困惑继续推进、想顺手改无关代码、为假想场景加防御性代码、或说不清改完怎么算成功时尤其触发。Use when writing, editing, refactoring, or reviewing code — the behavioral baseline against hidden confusion, collateral edits, speculative code, and unverifiable 'done'."
+description: "写代码、改代码、重构或评审任何代码时叠加的行为准则底座；当发现自己在隐藏困惑继续推进、想顺手改无关代码、为假想场景加防御性代码、或说不清改完怎么算成功时尤其触发。本件是贯穿全程的基线层，与任务承接件（lang-* 领域件、dev-tdd、dev-review-code 等）同时生效，不单独承接任务：语言写法走对应 lang- 件，测试纪律走 dev-tdd。Use when writing, editing, refactoring, or reviewing code — the behavioral baseline that layers over the task skill, not a task owner itself."
 ---
 
 # dev-code-conduct：编码行为四准则

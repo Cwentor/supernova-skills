@@ -1,6 +1,6 @@
 ---
 name: dev-request-review
-description: 当一项任务或大功能刚完成、准备合并或收尾，用户说「帮我发起评审」「找人看看再合」「完工了检查一下」时使用；多任务计划中每完成一个独立任务、大重构动工前、或卡住想换个视角时同样适用。Use when a task or major feature is just complete, before merging or wrapping up, or when the user asks to have the finished work reviewed.
+description: "当一项任务或大功能刚完成、准备合并或收尾，用户说「帮我发起评审」「找人看看再合」「完工了检查一下」时使用；多任务计划中每完成一个独立任务、大重构动工前、或卡住想换个视角时同样适用。边界：用户直接要求「评审这个 PR/diff」并要可合性结论的，走 dev-review-code。Use when a task or major feature is just complete and review should be requested or a fresh perspective sought — not when the user asks you to review a diff or PR yourself (that is dev-review-code)."
 ---
 
 # dev-request-review：发起代码评审

@@ -1,6 +1,6 @@
 ---
 name: lang-ts-api
-description: 当需要为 TypeScript 后端设计、评审或实现 REST API——定资源命名与 URL 结构、选 HTTP 状态码、定分页与过滤参数、统一错误响应、规划版本控制或速率限制时使用；用户提到 REST API、接口设计、API 契约、OpenAPI、端点、状态码、分页、429 等关键词时同样触发。Use when designing, reviewing, or implementing REST API endpoints and contracts in TypeScript — resource naming, status codes, pagination, filtering, error responses, versioning, or rate limiting.
+description: "当需要为 TypeScript 后端设计、评审或实现 REST API——定资源命名与 URL 结构、选 HTTP 状态码、定分页与过滤参数、统一错误响应、规划版本控制时使用；用户提到 REST API、接口设计、API 契约、OpenAPI、端点、状态码、分页、429 等关键词时同样触发。边界：429 这类响应契约归本件；限速策略与阈值、令牌存放、注入防护等安全决策走 meta-security-audit。Use when designing or implementing REST API endpoints and contracts in TypeScript — resource naming, status codes, pagination, filtering, error responses, or versioning. Rate-limit policy and security: meta-security-audit."
 ---
 
 # lang-ts-api：生产级 REST API 设计模式（TypeScript）

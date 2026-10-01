@@ -1,6 +1,6 @@
 ---
 name: dev-review-code
-description: 当用户要求评审一段 diff、一个分支或一个 PR，问「能不能合」，贴出代码问「有什么问题吗」，或提到 review、评审、审查、PR review、代码审计、安全审查、上线前把关时使用——哪怕没说出 review 这个词。Use when the user asks to review a diff, a branch, or a PR (review / 评审 / 审查 / PR review / 代码审计 / 能不能合), or pastes code asking what is wrong with it or whether it can merge.
+description: "当用户要求评审一段 diff、一个分支、一个 PR，问「能不能合」，贴出代码问「有什么问题吗」，或提到 review、评审、审查、PR review、代码审计时使用——哪怕没说出 review 这个词。边界：要求「发起评审」「找人看看再合」这类把评审派给别人的流程动作走 dev-request-review；以安全为主题的专项自查（无明显 diff/PR 对象）走 meta-security-audit。Use when the user asks to review a diff, a branch, or a PR (review / 评审 / 审查 / 能不能合), or pastes code asking what is wrong with it — not the act of requesting a review (dev-request-review)."
 ---
 
 # dev-review-code：代码评审（双轴 + 严重分级）

@@ -1,6 +1,6 @@
 ---
 name: lang-postgres-patterns
-description: "当用户在 PostgreSQL（postgres、pg、psql、RDS、Supabase）上设计表结构与索引、编写或优化查询与迁移脚本、排查慢查询或表膨胀、实现 UPSERT 或游标分页、用 SKIP LOCKED 做任务队列、调整连接池与超时参数、查找未建索引的外键时使用。分析型列存负载（ClickHouse 等）走 lang-clickhouse-patterns；ORM 层的事务与关联映射问题走对应语言件（如 lang-java-jpa、lang-python-patterns）。Use when designing PostgreSQL schemas and indexes, optimizing queries, or troubleshooting slow queries, table bloat, connection pooling, timeouts, and queue patterns in PostgreSQL."
+description: "当用户在 PostgreSQL（postgres、pg、psql、RDS、Supabase）上设计表结构与索引、优化查询与迁移脚本、排查慢查询或表膨胀、实现 UPSERT 或游标分页、用 SKIP LOCKED 做任务队列、调整连接池与超时参数、查找未建索引的外键时使用；未点名引擎的关系库索引与慢查询也走本件（原理通用）。分析型列存走 lang-clickhouse-patterns；ORM 层事务与映射走对应语言件（lang-java-jpa 等）；队列重复消费的根因定位先走 dev-debugging，确认队列建在 PG 表上再用本件的 SKIP LOCKED 形态修。Use when designing PostgreSQL schemas and indexes, optimizing queries, or troubleshooting slow queries, table bloat, connection pooling, timeouts, and queue patterns in PostgreSQL."
 ---
 
 # lang-postgres-patterns · PostgreSQL 数据层

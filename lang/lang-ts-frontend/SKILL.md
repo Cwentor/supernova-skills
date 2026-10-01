@@ -1,6 +1,6 @@
 ---
 name: lang-ts-frontend
-description: 当要用 React 或 Next.js 构建 TypeScript 前端界面时使用：写 React 组件（组合、children、复合组件）、管理状态（useState/useReducer/Context/Zustand）、数据获取（SWR/React Query/服务端组件）、性能优化（useMemo/useCallback/React.memo/懒加载/虚拟化）、表单验证、错误边界、可访问性（键盘导航/焦点管理/aria）；症状：props 层层透传（prop drilling）、组件重渲染过多、长列表滚动卡顿、想抽自定义 Hook 复用逻辑。Use when building or refactoring React / Next.js frontends in TypeScript — components, state management, data fetching, performance, forms, error boundaries, accessibility, or extracting custom hooks.
+description: "当要用 React 或 Next.js 构建 TypeScript 前端界面时使用：写 React 组件（组合、children、复合组件）、管理状态（useState/useReducer/Context/Zustand）、数据获取（SWR/React Query/服务端组件）、性能优化（memo/虚拟化）、表单验证、错误边界、可访问性（键盘/焦点/aria）；症状：props 层层透传、组件重渲染过多、长列表滚动卡顿、想抽自定义 Hook。iOS/macOS 原生界面走 lang-swift-patterns。Use when building or refactoring React / Next.js frontends in TypeScript — components, state, data fetching, performance, forms, accessibility, or custom hooks. Not native iOS/macOS (lang-swift-patterns)."
 ---
 
 # lang-ts-frontend — React / Next.js 前端模式速查

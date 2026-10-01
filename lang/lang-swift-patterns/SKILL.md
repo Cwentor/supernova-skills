@@ -1,6 +1,6 @@
 ---
 name: lang-swift-patterns
-description: 用 Swift/SwiftUI 构建 iOS、macOS 界面时使用：需要在 @State/@Binding/@Observable/@Environment 之间选状态方案、写 ViewModel 与数据流、搭 NavigationStack 类型安全导航、拆分视图、排查列表滚动卡顿或整屏重渲染、或清理 ObservableObject/@StateObject/@EnvironmentObject/AnyView 旧写法时触发。Use when writing Swift/SwiftUI views for iOS or macOS — picking state wrappers, building view models, NavigationStack routing, view composition, or fixing list scroll and re-render performance.
+description: 用 Swift/SwiftUI 构建 iOS、macOS 界面时使用：需要在 @State/@Binding/@Observable/@Environment 之间选状态方案、写 ViewModel 与数据流、搭 NavigationStack 类型安全导航、拆分视图、排查列表滚动卡顿或整屏重渲染、或清理 ObservableObject/@StateObject/@EnvironmentObject/AnyView 旧写法时触发。Web 前端（React/Next.js）页面症状走 lang-ts-frontend。Use when writing Swift/SwiftUI views for iOS or macOS — picking state wrappers, building view models, NavigationStack routing, view composition, or fixing list scroll and re-render performance. Not React web (lang-ts-frontend).
 ---
 
 # SwiftUI 架构模式速查

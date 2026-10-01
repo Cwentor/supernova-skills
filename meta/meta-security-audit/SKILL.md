@@ -1,6 +1,6 @@
 ---
 name: meta-security-audit
-description: "当要写或审查涉及安全的代码时使用：添加身份验证或授权、处理用户输入或文件上传、新建对外 API、读写机密或凭据、实现支付与敏感数据、接入第三方回调。症状：不确定密钥该放哪、怀疑存在注入或越权、上线前要做安全自查、代码里出现硬编码密钥、把用户输入直接拼进查询、日志里打印了密码或令牌。框架级安全配置（如 Spring Security 过滤器链）走对应 lang- 件；一段 diff 的整体质量评审走 dev-review-code。Use when writing or reviewing security-sensitive code — authentication and authorization, user input and file uploads, new external APIs, secrets handling, payments, or sensitive data."
+description: "当要写或审查涉及安全的代码时使用：添加身份验证或授权、处理用户输入或文件上传、新建对外 API、读写机密或凭据、实现支付与敏感数据、接入第三方回调。症状：不确定密钥该放哪、密钥硬编码或裸读环境变量、怀疑存在注入或越权、要加限速/限流防撞库、令牌该存 localStorage 还是 httpOnly Cookie、日志打印了密码或令牌、上线前要做安全自查、跨语言的安全加固（XSS/CSRF/越权/依赖漏洞）。框架级安全配置（如 Spring Security 过滤器链）走对应 lang- 件；一段 diff 的整体质量评审走 dev-review-code。Use when writing or reviewing security-sensitive code — authn/authz, input validation and file uploads, secrets, injection, rate limiting, token storage, XSS/CSRF, sensitive data, or dependency vulnerabilities."
 ---
 
 # meta-security-audit · 跨语言安全审查

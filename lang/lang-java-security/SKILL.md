@@ -1,6 +1,6 @@
 ---
 name: lang-java-security
-description: 当 Java / Spring Boot 项目需要配置 Spring Security（认证、授权、@PreAuthorize、BCrypt、CSRF、CORS、安全响应头），实现 JWT 或 OAuth2 登录，或出现防 SQL 注入、机密硬编码、依赖 CVE、速率限制、日志泄漏 PII 等安全加固与安全审查需求时使用。Use when a Java Spring Boot service configures Spring Security authn/authz, JWT or OAuth2 login, @PreAuthorize method security, BCrypt password storage, CSRF/CORS policy, or needs security review and hardening against SQL injection, hardcoded secrets, CVEs and rate-limit gaps.
+description: "当 Java / Spring Boot 项目需要配置 Spring Security（认证、授权、@PreAuthorize、BCrypt、CSRF、CORS、安全响应头），实现 JWT 或 OAuth2 登录，或出现防 SQL 注入、机密硬编码、依赖 CVE、速率限制、日志泄漏 PII 等加固需求时使用。边界：跨语言安全决策与体系化自查走 meta-security-audit，本件只做 Spring 生态落地配置。Use when a Java Spring Boot service configures Spring Security authn/authz, JWT or OAuth2 login, @PreAuthorize, BCrypt, CSRF/CORS, or needs hardening against SQL injection, hardcoded secrets, CVEs and rate-limit gaps. Cross-language security decisions: meta-security-audit."
 ---
 
 # Java 安全（Spring Security）
