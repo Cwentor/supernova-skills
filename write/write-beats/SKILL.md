@@ -1,6 +1,6 @@
 ---
 name: write-beats
-description: 用户要把已有素材堆写成文章时使用：显式触发词「节拍」「beats」「把素材写成文章」「叙事节奏」「原材料变文章」；症状：用户递来一份原材料 markdown 要求组织成文、要求按节拍逐步推进且每步走向由自己挑、素材攒齐了文章却迟迟开不了头。攒料探索尚未完成时不适用（先走 write-fragments）。Use when the user hands over a pile of raw material and asks to turn it into an article beat by beat, choosing each step themselves.
+description: "用户要把已有素材堆写成文章、且愿意在每一步自己挑走向时使用：显式触发词「节拍」「beats」「把素材写成文章」「叙事节奏」「原材料变文章」；症状：用户递来一份原材料 markdown 要求组织成文、要求按节拍逐步推进且每步走向由自己挑、素材攒齐了文章却迟迟开不了头。边界：把堆交给 agent 一次性塑形成文、重点在定结构/语气/逐段打磨的，走 write-shape；攒料探索尚未完成的不适用，先走 write-fragments。Use when the user hands over a pile of raw material and asks to turn it into an article beat by beat, choosing each step themselves — not when they want it shaped into a finished draft in one pass (that is write-shape)."
 ---
 
 # write-beats · 节拍成文

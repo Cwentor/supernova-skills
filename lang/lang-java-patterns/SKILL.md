@@ -1,6 +1,6 @@
 ---
 name: lang-java-patterns
-description: 当用户在 Java 项目中用 Spring Boot 搭建或重构后端时使用：出现 @RestController、@Transactional、@Cacheable、@Async、JpaRepository 等注解，讨论 REST API 设计、Controller/Service/Repository 分层、DTO 校验、分页、缓存、全局异常处理或日志配置。Use when writing or organizing Java Spring Boot backend code — REST controllers, layered services, JPA data access, caching, async jobs, exception handling, or logging.
+description: "当用户在 Java 项目中用 Spring Boot 搭建或重构后端时使用：出现 @RestController、@Transactional、@Cacheable、@Async、JpaRepository 等注解，讨论 REST API 设计、分层、DTO 校验、分页、缓存、全局异常处理或日志配置。边界：实体映射、N+1、抓取策略、事务细节走 lang-java-jpa；语言规范走 lang-java-standards；鉴权走 lang-java-security。Use when writing or organizing Java Spring Boot backend code: controllers, layering, caching, exception handling, logging. Entity mapping and fetch strategy: lang-java-jpa."
 ---
 
 # Spring Boot 架构模式

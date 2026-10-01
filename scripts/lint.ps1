@@ -36,6 +36,10 @@ foreach ($d in $dirs) {
             if ((-not $quoted) -and ($descVal -match ': ')) {
                 $issues += 'FAIL: description 未加引号却含 ASCII 冒号+空格（YAML 纯量标量陷阱，加载器会静默丢弃本技能）——用双引号包裹整个 description'
             }
+            $descLen = ($descVal.Trim('"').Trim("'")).Length
+            if ($descLen -gt 500) {
+                $issues += ('FAIL: description ' + $descLen + ' 字符超 500 上限（触发词被稀释，路由精度下降）——只保留触发条件，砍掉流程性描述')
+            }
         }
         $extra = @($fm | Where-Object { $_ -match '^[A-Za-z-]+:\s' -and $_ -notmatch '^(name|description):' })
         if ($extra.Count -gt 0) { $issues += ('WARN: frontmatter 多余字段: ' + ($extra -join ' | ')) }

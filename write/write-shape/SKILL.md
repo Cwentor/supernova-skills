@@ -1,6 +1,6 @@
 ---
 name: write-shape
-description: "当写作的攒料/探索阶段已完成，用户手上有一份固定的原料堆（碎片清单、访谈转录、成堆笔记），要把它逐段塑形成一篇文章时使用。症状与触发词：塑形、shape、逐段成文、逐段写、把笔记变成文章、文章结构怎么定、这段用散文还是列表、开头怎么写、候选开头、语气、voice、口吻。挖新碎片、选题、叙事节拍旅程不适用。Use when a fixed pile of raw material (fragments, transcripts, notes) must be shaped into an article block by block — triggers: 塑形, shape, 逐段成文, 文章结构, 开头怎么写, 语气, voice."
+description: "当写作的攒料/探索阶段已完成，用户手上有一份固定的原料堆（碎片清单、访谈转录、成堆笔记），要把它逐段塑形成一篇文章时使用。症状与触发词：塑形、shape、逐段成文、逐段写、把笔记变成文章、文章结构怎么定、这段用散文还是列表、开头怎么写、候选开头、语气、voice、口吻。边界：要求按节拍逐步推进、每一步走向由用户自己挑的，走 write-beats；挖新碎片、选题不适用。Use when a fixed pile of raw material (fragments, transcripts, notes) must be shaped into an article block by block — triggers: 塑形, shape, 逐段成文, 文章结构, 开头怎么写, 语气, voice. Not for beat-by-beat journeys where the user picks each step (that is write-beats)."
 ---
 
 # write-shape：逐段塑形成文

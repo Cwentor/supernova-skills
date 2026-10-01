@@ -1,6 +1,6 @@
 ---
 name: lang-java-jpa
-description: "当用户在 Java / Spring Boot 项目中使用 JPA 或 Hibernate：设计实体与 @OneToMany / @ManyToOne 关联映射、遭遇 N+1 查询或 LazyInitializationException、需要 JOIN FETCH / @EntityGraph / DTO 投影优化读取、决定 lazy/eager 抓取策略、配置 @Transactional 事务边界、实现分页（Pageable / PageRequest）或审计字段（@CreatedDate / @LastModifiedDate）时使用。Use when working with JPA or Hibernate in a Java / Spring Boot project: entity and relationship mapping, N+1 query issues, fetch strategy decisions, transaction boundaries, pagination, or audit fields."
+description: "当用户在 Java / Spring Boot 项目中使用 JPA 或 Hibernate：设计实体与 @OneToMany / @ManyToOne 关联映射、遭遇 N+1 或 LazyInitializationException、需要 JOIN FETCH / @EntityGraph / DTO 投影优化读取、决定抓取策略、配置 @Transactional 事务边界、实现分页或审计字段时使用。边界：Controller 分层与 REST 设计走 lang-java-patterns，语言级规范走 lang-java-standards。Use when working with JPA or Hibernate in Java/Spring Boot: entity mapping, N+1, fetch strategy, transaction boundaries, pagination, audit fields. Not controller layering (lang-java-patterns)."
 ---
 
 # JPA / Hibernate 数据访问模式
