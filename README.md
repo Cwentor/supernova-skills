@@ -79,3 +79,15 @@ powershell -File scripts\install.ps1
 | Matt Pocock 工程技能集 | 许可未查证 ⚠️ 发布前需核查源仓库许可 |
 
 个人使用阶段以上风险均不构成问题；**公开发布前**必须补齐：① 核查 Matt Pocock 技能集许可 ② 处理 karpathy-guidelines 无许可问题 ③ 按上表保留各源 MIT 声明。
+
+### 源库已删除（2026-10-01，用户裁决）
+
+`D:\Program\skills\` 源库（6 仓库 / 22.2 MB 内容 / 1246 文件）已按用户指示**全部删除，未归档**。删除前实测：已装 57 件的 junction **全部指向 `D:\Program\my-skills`，指向源库的 0 条**，故删除不影响任何已装技能；本体系正文亦不引用源路径。5 个仓库有可用的 origin 远端，随时可重新克隆。
+
+**唯一不可恢复的是 `dsh`**（Matt Pocock 工程技能集）：无 `.git`、无 remote、无 README，DSH 安装目录中亦无副本（已搜 `D:\Program`、`D:\IDE`、`.agents` 三处），其中 **26 件为全盘仅存一份**。删除前对它的许可状况做了最后一次勘察，结论留档于此（供发布前参考）：
+
+- 仓库内 **LICENSE 类文件 0 个**；41 件 SKILL.md 的 frontmatter **无 `license` 字段、无 `author` 字段**
+- 全文无任何 Copyright / © / MIT / Apache / "licensed under" 表述
+- 唯一可溯源的作者线索：`SKILL.md` 内链向 `https://www.aihero.dev/ai-coding-dictionary/smart-zone`（aihero.dev 为 Matt Pocock 站点），据此判定来源为 Matt Pocock 的技能集
+
+→ **发布前仍需自行核查 Matt Pocock 技能集许可**；此结论只能证明"源文件本身未携带许可声明"，不能证明许可不存在。
