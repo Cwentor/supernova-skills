@@ -41,7 +41,7 @@
 ## 过渡期事实（安装时已处理，供知悉）
 
 1. 旧拷贝（被替换的 19 个）已**备份**在 `%USERPROFILE%\.agents\skills-backup-*`，未硬删
-2. superpowers 插件已在 `.dsh\profiles\desktop\.dsh-market\state.json` 的 `disabled` 中停用——旧 15 个 superpowers 技能不再加载，避免与新链抢触发
+2. superpowers 插件的 15 个旧技能不再加载（防与新链抢触发）。**勘误（2026-10-01 对账）**：早期记录称「已在 `disabled` 数组中停用」，实际核查时该插件已不在 `node_modules` 中，`state.json` 的 `disabled` 为空——防护结果成立（旧技能确不加载），但机制是「插件未安装」而非「被禁用」
 3. 未被替换的旧技能（grilling、photo-get、modsearch 等）继续可用，等后续期接管
 
 ## 回滚（任一时刻可逆）

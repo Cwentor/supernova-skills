@@ -68,10 +68,11 @@ description: 不知道该用哪个 skill、想了解个人技能体系结构、�
 - **治理工具** → `meta-writing-skills`（writing-skills 检查清单中文化适配：新建 / 修改 / 验证技能）
 - 后期上线（现在不存在，禁止引用）：meta-questionnaire、meta-handoff、meta-security-audit、meta-find-skills、meta-writing-for-agents、meta-grill-me、meta-grilling、meta-photo-get、meta-modsearch
 
-## 后续期（规划中）
+## 后续期（无排期，转维护态）
 
-- 体系已按蓝图落地到终态 **55 件**（一期 26 + 二期 20 + 三期 6 + 四期 3）；四期 `ops-` 已上线。
-- 未立项：上列 meta- 后续 9 件；GitHub 约定层 `ops-github-conventions` 属暂缓区（同类需求出现 ≥3 次再按准入规则立项）。
+- 体系已按蓝图落地到终态 **55 件**（一期 26 + 二期 20 + 三期 6 + 四期 3），2026-10-01 试点三点全部通过，**进入维护态**。
+- 增量演进一律走准入规则：同一真实需求出现 ≥3 次且现有覆盖不了，才立项（见 `DESIGN.md`）。
+- 候选方向（**均无排期，禁止引用**）：`ops-github-conventions`（暂缓区）。下列 meta- 方向中，仅 `handoff` / `grilling` / `photo-get` / `modsearch` 有蓝图出处（DESIGN L38、L3、L61），其余（questionnaire、security-audit、find-skills、writing-for-agents、grill-me）**未在蓝图中出现**，属待裁决的悬空候选：meta-questionnaire、meta-handoff、meta-security-audit、meta-find-skills、meta-writing-for-agents、meta-grill-me、meta-grilling、meta-photo-get、meta-modsearch
 - 未上线的活先用通用能力顶上，不要虚构引用不存在的 skill。
 
 ## 使用规则
