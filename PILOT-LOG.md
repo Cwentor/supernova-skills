@@ -20,7 +20,7 @@
 
 ### 2026-10-01 · 四期 ops- 组 3 件建成，体系达终态 55 件 ✅
 
-- **范围**：`ops-deploy`（153 行，deployment-patterns + docker-patterns + database-migrations 三合一 + verification-loop / springboot-verification 的验证闭环精华，四条核心原则统一五源）、`ops-monitoring`（153 行，无源新建）、`ops-wizard`（167 行，含可直接运行的 bash 向导骨架）
+- **范围**：`ops-deploy`（153 行，deployment-patterns + docker-patterns + database-migrations 三合一 + verification-loop / springboot-verification 的验证闭环精华，四条核心原则统一五源）、`ops-monitoring`（153 行，无源新建）、`ops-wizard`（152 行，含可直接运行的 bash 向导骨架，已过 `bash -n` 语法校验）
 - **门禁**：lint **55 PASS / 0 WARN / 0 FAIL**；交叉引用闭环；README 与 router 索引覆盖率 55/55；三件 description 均按三期审计规则加双引号（引号陷阱未再出现）
 - **安装**：55 件 junction 处理完毕，ops 三件读回正常；旧技能 `wizard` 备份停用（→ `ops-wizard`，备份于 `skills-backup-20261001-103810`）
 - **上线确认**：技能目录刷新后 `ops-deploy` / `ops-monitoring` / `ops-wizard` 三件全部出现，`wizard` 已消失
@@ -37,3 +37,10 @@
 - **验证**：修复后重装触发目录刷新，上述 5 件全部出现，技能总数 52/52 齐全（修复前连续三次刷新均缺席）。
 - **影响面**：二期验证期间这 4 件 lang 实际不可用，二期对应冒烟项需重跑；三期 write-shape 同理。
 - **教训**：lint 是行级检查，抓不到解析层故障；凡「写入成功但技能不出现」，先怀疑 frontmatter 能否被严格 YAML 解析。
+
+### [ops] 代理收尾失败留下半成品 + 一处错误推断（2026-10-01 发现并修复）
+
+- **症状**：`ops-wizard` 的构建代理在「Trimming three spots」时失败退出，其未完成的修剪已随 `git add -A` 进入提交（167 → 147 行），剪掉了几条纪律内容（常见错误 2 行、借口表 2 行、红线 1 条），文件语法完好因此 lint 全绿、看不出异常。
+- **修复**：复核时逐行比对源版与修剪版，补回被剪内容；最终 152 行，并提取 bash 骨架跑 `bash -n`（退出码 0）验证骨架真能解析。
+- **连带纠正**：复核中曾断言 `open_url()` 的 `&&` 链写法在 `set -e` 下会中止向导，并把该结论写进文件注释。**实测（Git bash）证明推断错误**——`&&` 左侧命令失败受 errexit 豁免，两种写法都安全。错误注释已改为实测事实，避免技能教坏后来读者。
+- **教训**：① 代理「失败/中断」不等于「没写盘」——中断前已落盘的部分会被后续 `git add -A` 一并提交，交付前必须比对文件与预期的差异；② 不要凭语言规则推理下判断（尤其 `set -e` 这类带豁免的语义），跑一次实测再下结论、再写进文档。
