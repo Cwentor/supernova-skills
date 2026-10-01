@@ -1,4 +1,4 @@
-# PILOT-LOG.md — 一期试点验证记录
+# PILOT-LOG.md — 技能体系试点验证记录（一至四期）
 
 > 格式约定见 PILOT.md「每日怎么记」。跑完全部验证后，把本文件丢回会话走 meta-knowledge-closeout 沉淀。
 
@@ -17,6 +17,15 @@
 - **结论**：52/52 在盘且无多余件；lint 52 PASS / 0 WARN / 0 FAIL；20/20 lang 的 description 显式含语言/框架名；README 与 router 索引覆盖率补齐至 52/52；superpowers 等旧技能的停用确认真实生效
 - **发现并修复**：5 件技能因 frontmatter YAML 陷阱被加载器静默丢弃（详见下「问题记录」）；修复后目录刷新确认 52/52 全部上线
 - **遗留影响**：二/三期试点指南各自补了修正提示——受影响技能的冒烟项需在修复后重跑
+
+### 2026-10-01 · 四期 ops- 组 3 件建成，体系达终态 55 件 ✅
+
+- **范围**：`ops-deploy`（153 行，deployment-patterns + docker-patterns + database-migrations 三合一 + verification-loop / springboot-verification 的验证闭环精华，四条核心原则统一五源）、`ops-monitoring`（153 行，无源新建）、`ops-wizard`（167 行，含可直接运行的 bash 向导骨架）
+- **门禁**：lint **55 PASS / 0 WARN / 0 FAIL**；交叉引用闭环；README 与 router 索引覆盖率 55/55；三件 description 均按三期审计规则加双引号（引号陷阱未再出现）
+- **安装**：55 件 junction 处理完毕，ops 三件读回正常；旧技能 `wizard` 备份停用（→ `ops-wizard`，备份于 `skills-backup-20261001-103810`）
+- **上线确认**：技能目录刷新后 `ops-deploy` / `ops-monitoring` / `ops-wizard` 三件全部出现，`wizard` 已消失
+- **待用户执行**：按 `PILOT4.md` 跑触发冒烟与边界观察（重点：ops- 与 dev- 的分工、ops-wizard 不该接 agent 自己能做的活）
+- **终态**：一期 26 + 二期 20 + 三期 6 + 四期 3 = **55 件**，与 DESIGN.md「终态规模 ~55」一致；未立项：meta- 后续 9 件、`ops-github-conventions`（暂缓区，需求 ≥3 次才立项）
 
 ## 问题记录（发现就记一行）
 

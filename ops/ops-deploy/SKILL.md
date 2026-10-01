@@ -16,7 +16,7 @@ description: "准备部署、上线、发布、回滚，或要写 Dockerfile、�
 3. **幂等**——同一份产物重复部署结果一致：镜像用固定 tag 或 digest，迁移可重复执行（`IF NOT EXISTS`、只处理 `IS NULL` 的行），脚本重跑安全。
 4. **顺序**——迁移与代码不一起上，而是分先后：先向后兼容地扩（expand），再发新代码，再回填，最后收（contract）。谁先谁后搞反 = 停机。
 
-分工：证据纪律与「完成」的判定归 dev-verification；分支怎么落地、PR 怎么开归 dev-finish-branch；`reset --hard`、`push -f` 这类破坏性操作的止损归 dev-git-guardrails；写部署代码时的行为准则归 dev-code-conduct。
+分工：证据纪律与「完成」的判定归 dev-verification；分支怎么落地、PR 怎么开归 dev-finish-branch；`reset --hard`、`push -f` 这类破坏性操作的止损归 dev-git-guardrails；写部署代码时的行为准则归 dev-code-conduct；上线后的监控、告警与健康检查体系归 ops-monitoring（本技能只管发布那一刻的探针与冒烟）；开通云资源、配置凭据这类只有人类能做的步骤归 ops-wizard。
 
 ## 何时使用
 
@@ -32,7 +32,7 @@ description: "准备部署、上线、发布、回滚，或要写 Dockerfile、�
 
 - 纯本地脚本或库，没有部署目标、没有数据库
 - 只是问「CI 为什么红」——那是修 CI，不是部署设计
-- 完整的可观测性体系设计（本技能只写「上线后头 30 分钟看什么」）
+- 完整的可观测性体系设计（本技能只写「上线后头 30 分钟看什么」）——归 ops-monitoring
 
 ## 部署策略选择
 
