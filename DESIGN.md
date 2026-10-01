@@ -76,11 +76,11 @@ ops-deploy（deployment-patterns + docker-patterns + database-migrations 三合�
 
 | 类别 | 技能 | 处置现状 |
 |---|---|---|
-| 已被本体系覆盖，但 install.ps1 未收录 | `writing-for-agents`（↔ `meta-writing-skills` 意图重叠，**且未设 `disable-model-invocation`，会真实参与触发**） | ⚠️ 待裁决：划界或纳入 `superseded` |
+| 已被本体系覆盖，但 install.ps1 未收录 | `writing-for-agents`（↔ `meta-writing-skills` 意图重叠，**且未设 `disable-model-invocation`，会真实参与触发**） | ✅ **已裁决（2026-10-01）：忽略，不处置**——不划界、不入 `superseded`、不动用户级目录。触发时一律以本体系 `meta-writing-skills` 为准（`meta-skill-router` 已有此规则） |
 | 已被覆盖，靠自身开关静默 | `grilling`、`grill-me`、`grill-with-docs`、`handoff`、`claude-handoff`、`wait-what`、`to-questionnaire`、`teach`、`scaffold-exercises`、`loop-me`、`retro` | 均带 `disable-model-invocation: true`，不自动触发；保留可用 |
 | 体系外，蓝图已裁归 `meta-` 层但本仓库尚未建 | `find-skills`（vercel-labs/skills）属体系外另有上游；`modsearch`（liustack/modsearch）与 `photo-get` 按「已裁小项」归 `meta-`，待后续期立项 | 现装副本来自第三方，不整合、不覆盖；本体系侧**禁止引用** `meta-modsearch` / `meta-photo-get`（尚未立项） |
 
-- **`meta-writing-skills` 立项理由的更正**：原文写「停用 superpowers-dsh 后它随之消失」。实际该插件未安装，而 `writing-for-agents`（另一来源、同域）**仍在盘上且可触发**——立项结论不变，但触发原因应改记为「同域旧技能仍在」，并需按上表处理。
+- **`meta-writing-skills` 立项理由的更正**：原文写「停用 superpowers-dsh 后它随之消失」。实际该插件未安装，而 `writing-for-agents`（另一来源、同域）**仍在盘上且可触发**——立项结论不变，但触发原因应改记为「同域旧技能仍在」。该件的处置已裁为**忽略**（见上表），故不再构成未决项。
 - **被替代技能并非无实体副本**：`wizard` 实存于 `.agents\skills-backup-20261001-103810\wizard`（该备份目录**仅此一件**）；`code-review` 另有独立副本于 `D:\Program\learn-claude-code\skills\code-review`（与本体系无关的第三方仓库）。因此「旧技能只在 `.agents` 一份」的说法不成立，回滚时不应假设备份目录内容完整。
 - **`.zcode\skills` 的影响面**：该目录原有 49 条目 = 39 junction + 10 实体目录。其中 14 条 junction 指回 `.agents\skills`，使上表 15 件**有 14 件被两个目录同时看到**（例外：`photo-get` 只在 `.agents\skills`）；另 25 条 junction 指向已被替代的旧技能且**目标已全部不存在**。**该 25 条断链已于 2026-10-01 清理**（删除前存档于 `%USERPROFILE%\.zcode\skills-broken-junctions-*.txt`，逐条前置校验「仍是 reparse point 且目标仍不存在」才删；删后复核条目 49→24、junction 39→14、剩余断链 0，实体目录与 `.agents\skills` 均未受影响）。
 
@@ -90,6 +90,6 @@ Django 归偶发只留 patterns；to-spec 保留；grill-with-docs 删、ADR 理
 
 ## 一期补充项（落地时发现，已向用户披露）
 
-1. meta-writing-skills：治理流程引用 writing-skills 检查清单。原文记「停用 superpowers-dsh 后它随之消失」——**已更正**：该插件未安装，而**同域旧技能 `writing-for-agents` 仍在盘上**（中文化适配的立项结论不变，但真实触发原因见「旧技能的真实去向」）。
+1. meta-writing-skills：治理流程引用 writing-skills 检查清单。原文记「停用 superpowers-dsh 后它随之消失」——**已更正**：该插件未安装，而**同域旧技能 `writing-for-agents` 仍在盘上**（中文化适配的立项结论不变，但真实触发原因见「旧技能的真实去向」）。该件的处置已裁为**忽略**（同见该节表格），不再构成未决项。
 2. dev-git-worktrees：原蓝图遗漏（using-git-worktrees 未进任何合并组）——「隔离工作区」意图独立，补入一期 dev。
 3. 勘误：gh-* 系技能来自 DSH 市场插件 dsh-github-skills，非核心内置。

@@ -40,7 +40,7 @@ powershell -File scripts\uninstall.ps1         # 只摘 junction，备份保留
 文档里的**环境断言会随时间腐坏**。本仓库已实测确认的现状（2026-10-01 对账，详见 `DESIGN.md`「旧技能的真实去向」）：
 
 - **加载来源有三处**，不止 `.agents\skills`：还有 `%USERPROFILE%\.zcode\skills`（已被 DSH 启用，见 `.dsh\agent-skills\state.json`），故「每个 skill 只允许一个加载来源」当前**不成立**（15 件滞留旧技能中有 14 件被两处同时看到）。该目录原有 25 条断链 junction，已于 2026-10-01 清理
-- **`.agents\skills` 下 15 个非 junction 实体目录**是真滞留旧技能，**一个都不在 `install.ps1` 的 `superseded` 表内**；其中 `writing-for-agents` **未设 `disable-model-invocation`、会真实触发**，与 `meta-writing-skills` 重叠（待裁决）
+- **`.agents\skills` 下 15 个非 junction 实体目录**是真滞留旧技能，**一个都不在 `install.ps1` 的 `superseded` 表内**；其中 `writing-for-agents` **未设 `disable-model-invocation`、会真实触发**，与 `meta-writing-skills` 重叠——**已裁决（2026-10-01）：忽略，不处置**；触发时一律以本体系 `meta-writing-skills` 为准
 - `superpowers-dsh` **未安装**（非「被禁用」）；`disabled` 为空数组，不存在可移除恢复的开关
 - 旧技能**并非都有备份**：现存备份目录只含 `wizard` 一件
 
