@@ -49,7 +49,7 @@ TOTAL_STAGES=5
 say()  { printf '\n\033[1m%s\033[0m\n' "$*"; }
 step() { printf '  • %s\n' "$*"; }
 done_stage() { grep -qxF "$1" "$STATE_FILE" 2>/dev/null; }   # 已完成 → 跳过
-mark_done()  { printf '%s\n' "$1" >> "$STATE_FILE"; }        # 只追加，随时可续
+mark_done()  { done_stage "$1" || printf '%s\n' "$1" >> "$STATE_FILE"; }   # 已标记则不重复写
 
 write_env() {   # 幂等 upsert：重复运行不追加重复行；永不回显值
   local key="$1" val="$2" file="${3:-.env}"
@@ -58,17 +58,18 @@ write_env() {   # 幂等 upsert：重复运行不追加重复行；永不回显�
 }
 
 ask() {   # 非空 + 正则校验；不过就重问，绝不带脏值往下走
-  local prompt="$1" out="$2" pattern="${3:-.}" val=""
-  while :; do read -r -p "$prompt" val
-    [[ -n "$val" && "$val" =~ $pattern ]] && break
-    step "输入不合法（非空，且需匹配 ${pattern}），重试。"; done
-  printf -v "$out" '%s' "$val"
+  # 内部变量一律 __ 前缀：printf -v 是按「变量名」间接赋值，内部名与调用方目标名相撞会写错位置
+  local __prompt="$1" __name="$2" __pattern="${3:-.}" __val=""
+  while :; do read -r -p "$__prompt" __val
+    [[ -n "$__val" && "$__val" =~ $__pattern ]] && break
+    step "输入不合法（非空，且需匹配 ${__pattern}），重试。"; done
+  printf -v "$__name" '%s' "$__val"
 }
 
 ask_secret() {   # 隐藏输入：值只进目标存储，不回显、不落 shell history
-  local prompt="$1" out="$2" val=""
-  while [[ -z "$val" ]]; do read -rs -p "$prompt" val; printf '\n'; done
-  printf -v "$out" '%s' "$val"
+  local __prompt="$1" __name="$2" __val=""
+  while [[ -z "$__val" ]]; do read -rs -p "$__prompt" __val; printf '\n'; done
+  printf -v "$__name" '%s' "$__val"
 }
 
 confirm() {   # 不可逆操作：逐字确认词；回车或别的输入一律中止
