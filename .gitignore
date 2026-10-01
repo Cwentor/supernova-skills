@@ -1,3 +1,19 @@
+# 临时工作区（校验脚本的中间产物）
 .scratch/
+
+# 操作系统生成
 Thumbs.db
+desktop.ini
 .DS_Store
+
+# 编辑器 / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 校验脚本缓存（本仓库无构建、无依赖，故不列 node_modules）
+__pycache__/
+*.pyc
+.pytest_cache/

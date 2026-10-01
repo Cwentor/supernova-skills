@@ -69,18 +69,21 @@ description: 不知道该用哪个 skill、想了解个人技能体系结构、�
 - **会话收尾** → `meta-knowledge-closeout`（知识对账 + 模式沉淀，一切落盘须人确认）
 - **治理工具** → `meta-writing-skills`（writing-skills 检查清单中文化适配：新建 / 修改 / 验证技能）
 - 后期上线（现在不存在，禁止引用）：meta-questionnaire、meta-handoff、meta-find-skills、meta-writing-for-agents、meta-grill-me、meta-grilling、meta-photo-get、meta-modsearch
+  - **对齐提示（2026-10-01 对账）**：上列是「本体系未建」的候选，但**同一意图的旧技能可能已在环境中存在**——例如 `writing-for-agents`（写 agent 消费的文档）实体目录就在 `.agents\skills` 下，语义与 `meta-writing-skills` 重叠。此时**以本体系的 `meta-writing-skills` 为准**，不要因为它不在本表内就当作不存在。
 
 ## 后续期（无排期，转维护态）
 
 - 体系已按蓝图落地到终态 **57 件**（一期 26 + 二期 20 + 三期 6 + 四期 3 + 后期补 2），2026-10-01 试点三点全部通过后进入**维护态**。
 - 增量演进一律走准入规则：同一真实需求出现 ≥3 次且现有覆盖不了，才立项（见 `DESIGN.md`）。
-- 候选方向（**均无排期，禁止引用**）：`ops-github-conventions`（暂缓区）。下列 meta- 方向中，仅 `handoff` / `grilling` / `photo-get` / `modsearch` 有蓝图出处（DESIGN L38、L3、L61），其余（questionnaire、find-skills、writing-for-agents、grill-me）**未在蓝图中出现**，属待裁决的悬空候选：meta-questionnaire、meta-handoff、meta-find-skills、meta-writing-for-agents、meta-grill-me、meta-grilling、meta-photo-get、meta-modsearch
+- 候选方向（**均无排期，禁止引用**）：`ops-github-conventions`（暂缓区）。下列 meta- 方向中，仅 `handoff` / `grilling` / `photo-get` / `modsearch` 有蓝图出处（见 `DESIGN.md`「删除清单」的 dsh 段与「已裁小项」），其余（questionnaire、find-skills、writing-for-agents、grill-me）**未在蓝图中出现**，属待裁决的悬空候选：meta-questionnaire、meta-handoff、meta-find-skills、meta-writing-for-agents、meta-grill-me、meta-grilling、meta-photo-get、meta-modsearch
+  - **文档引用用章节名，勿写行号**：行号会随文档增删漂移（本节此前的 `DESIGN L38/L3/L61` 三个行号在 2026-10-01 对账时已全部失效——L38 为空行、L3 是会议名而非蓝图）。
 - 未上线的活先用通用能力顶上，不要虚构引用不存在的 skill。
+- **未执行的待办**（不属技能体系，是仓库级待办）：`BACKLOG-ARTIFACTS.md`——补写可运行产物的规程与实测约束（含单文件约定、200 行上限、产物命名避五前缀两条 lint 陷阱）。需要动约定，属「体系变更」。
 
 ## 使用规则
 
 1. 拿不准用哪个 skill → 查本表；表里没有 → 直说没有，不编造。
 2. 任务已明确匹配某 skill 的触发词 → 直接用，不必先查本表。
-3. 过渡期：环境里可能残留同域旧技能（如 `tdd`、`test-driven-development`、`code-review` 等无前缀旧名，以及已被取代的 `migrate-to-shoehorn`、`setup-ts-deep-modules`、`research`、`writing-fragments`、`writing-beats`、`writing-shape`、`wizard`）——一律以 `dev-` / `meta-` / `lang-` / `write-` / `ops-` 新技能为准，不要调用旧名。
+3. 过渡期：环境里可能残留同域旧技能——一律以 `dev-` / `meta-` / `lang-` / `write-` / `ops-` 新技能为准，不要调用旧名。**实测滞留名单（2026-10-01 对账，非推测）**：`.agents\skills` 下 15 个非 junction 实体目录中，**会真实参与触发**的是 `writing-for-agents`（与 `meta-writing-skills` 重叠，本表冲突时以本体系为准）；其余 `grilling`、`grill-me`、`grill-with-docs`、`handoff`、`claude-handoff`、`wait-what`、`to-questionnaire`、`teach`、`scaffold-exercises`、`loop-me`、`retro` 均自带 `disable-model-invocation: true` 不自动触发；`find-skills` / `modsearch` / `photo-get` 为体系外来源（其中后两者蓝图已裁归本体系 `meta-` 层，但**尚未立项，禁止引用**）。详见 `DESIGN.md`「旧技能的真实去向」。
 4. 本表与实际 skill 内容冲突时，以实际 skill 为准，并提示用户更新本表。
 5. 体系新增 / 删除 skill 后，必须同步更新本表（单一来源原则）。

@@ -40,9 +40,10 @@
 
 ## 过渡期事实（安装时已处理，供知悉）
 
-1. 旧拷贝（被替换的 19 个）已**备份**在 `%USERPROFILE%\.agents\skills-backup-*`，未硬删
-2. superpowers 插件的 15 个旧技能不再加载（防与新链抢触发）。**勘误（2026-10-01 对账）**：早期记录称「已在 `disabled` 数组中停用」，实际核查时该插件已不在 `node_modules` 中，`state.json` 的 `disabled` 为空——防护结果成立（旧技能确不加载），但机制是「插件未安装」而非「被禁用」
-3. 未被替换的旧技能（grilling、photo-get、modsearch 等）继续可用，等后续期接管
+1. 旧拷贝（被替换的）已**备份**在 `%USERPROFILE%\.agents\skills-backup-*`，未硬删。**勘误（2026-10-01 对账）**：现存备份目录 `skills-backup-20261001-103810` **仅含 `wizard` 一件**，并非「被替换的 19 个」都在其中——多数被替代技能已被移除且无备份副本，回滚时不可假设备份完整
+2. superpowers 插件的 15 个旧技能不再加载（防与新链抢触发）。**勘误（2026-10-01 对账）**：早期记录称「已在 `disabled` 数组中停用」，实际核查时该插件已不在 `node_modules` 中，`state.json` 的 `disabled` 为空，且 `.dsh` 与 DSH 安装目录内搜 `superpower` **零命中**——防护结果成立（旧技能确不加载），但机制是「**插件未安装**」而非「被禁用」，不存在可移除恢复的开关
+3. **真正滞留在盘上的是另一批**：`.agents\skills` 下有 15 个非 junction 实体目录（`writing-for-agents`、`grilling`、`find-skills`、`photo-get`、`modsearch` 等），**均不在 `install.ps1` 的 `superseded` 表内**。其中 `writing-for-agents` **未设 `disable-model-invocation`，会真实参与触发**，与 `meta-writing-skills` 意图重叠——详见 DESIGN.md「旧技能的真实去向」
+4. **另一处已被启用的技能目录**：`%USERPROFILE%\.zcode\skills`（见 `.dsh\agent-skills\state.json`）。它含 14 条指回 `.agents\skills` 的 junction，故上述滞留技能中**有 14 件会被两个目录同时看到**（例外：`photo-get` 仅在 `.agents\skills`）。原有的 25 条指向已删旧技能的断链 junction **已于 2026-10-01 清理**，该目录现为 24 条目（14 junction + 10 实体目录）
 
 ## 回滚（任一时刻可逆）
 
@@ -50,8 +51,9 @@
 # 摘除全部新 junction（备份不受影响）
 powershell -File scripts\uninstall.ps1
 # 恢复某批旧拷贝：把 .agents\skills-backup-*\对应目录 拷回 .agents\skills\
-# 恢复 superpowers 插件：编辑 .dsh\profiles\desktop\.dsh-market\state.json，从 disabled 数组移除 "superpowers-dsh"
 ```
+
+> **勘误（2026-10-01 对账）**：此处原有一行「恢复 superpowers 插件：编辑 `.dsh\profiles\desktop\.dsh-market\state.json`，从 `disabled` 数组移除 `superpowers-dsh`」——**该操作不存在**：`disabled` 为空且插件未安装。恢复旧技能请改走上面的备份路径（注意备份目录仅含 `wizard`，见「过渡期事实」第 1 条）。
 
 ## 观察重点（你会替整期方法论把关）
 

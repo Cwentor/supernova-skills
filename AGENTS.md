@@ -1,6 +1,6 @@
 # AGENTS.md — my-skills 仓库操作约定
 
-个人多领域 skill 体系仓库。设计公理与全量清单见 `DESIGN.md`；导航索引见 `meta\meta-skill-router\SKILL.md`；验证历史见 `PILOT-LOG.md`。
+个人多领域 skill 体系仓库。设计公理与全量清单见 `DESIGN.md`；导航索引见 `meta\meta-skill-router\SKILL.md`；验证历史见 `PILOT-LOG.md`；未执行的待办见 `BACKLOG-ARTIFACTS.md`。
 
 ## 怎么跑
 
@@ -34,3 +34,14 @@ powershell -File scripts\uninstall.ps1         # 只摘 junction，备份保留
 - 增量演进走 `DESIGN.md` 准入规则：同一真实需求出现 ≥3 次、现有覆盖不了，才立项
 - 未立项：`meta-` 后续 8 件（见 router「后续期」）、`ops-github-conventions`（暂缓区）
 - 新增/修改技能后必须：跑 lint → 更新 `meta-skill-router` 索引 → 刷新后确认该技能**出现在技能目录中**（防 YAML 陷阱静默丢件）
+
+## 环境对账（改文档前先看）
+
+文档里的**环境断言会随时间腐坏**。本仓库已实测确认的现状（2026-10-01 对账，详见 `DESIGN.md`「旧技能的真实去向」）：
+
+- **加载来源有三处**，不止 `.agents\skills`：还有 `%USERPROFILE%\.zcode\skills`（已被 DSH 启用，见 `.dsh\agent-skills\state.json`），故「每个 skill 只允许一个加载来源」当前**不成立**（15 件滞留旧技能中有 14 件被两处同时看到）。该目录原有 25 条断链 junction，已于 2026-10-01 清理
+- **`.agents\skills` 下 15 个非 junction 实体目录**是真滞留旧技能，**一个都不在 `install.ps1` 的 `superseded` 表内**；其中 `writing-for-agents` **未设 `disable-model-invocation`、会真实触发**，与 `meta-writing-skills` 重叠（待裁决）
+- `superpowers-dsh` **未安装**（非「被禁用」）；`disabled` 为空数组，不存在可移除恢复的开关
+- 旧技能**并非都有备份**：现存备份目录只含 `wizard` 一件
+
+**引用文档请写章节名，不要写行号**（行号会随增删漂移，已有三个失效实例）。
